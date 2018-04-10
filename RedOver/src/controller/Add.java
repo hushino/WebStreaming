@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.dialect.SAPDBDialect;
+
 import dao.Anime;
 import model.ModelAdd;
 
@@ -24,8 +26,8 @@ public class Add extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         ModelAdd op = new ModelAdd();
-       
-        op.addAnime(new Anime
+        
+		op.addAnime(new Anime
                                 (
                                     request.getParameter("nom"),
                                     request.getParameter("correo"), null
