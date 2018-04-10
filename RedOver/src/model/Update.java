@@ -6,16 +6,18 @@ import org.hibernate.Transaction;
 import dao.Anime;
 import hibernateUtil.HibernateUtil;
 
-public class ModelAdd {
+public class Update {
 	Session session = null;
 	Transaction transaction = null;
 
-	public void addAnime(Anime anime) {
+	public void updateAnime(int id) {
 		try {
 			session = HibernateUtil.getSessionFactory().openSession();
 			transaction = session.getTransaction();
 			transaction.begin();
-			session.save(anime);
+			Anime animu = (Anime) session.get(Anime.class, id);
+			animu.setNombre("Uchiha");
+			session.update(animu);
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {
@@ -28,7 +30,4 @@ public class ModelAdd {
 		}
 
 	}
-	
-
- 
 }

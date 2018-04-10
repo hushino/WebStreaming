@@ -13,6 +13,7 @@
 	<c:forEach items="${datos}" var="dato">
 		<tr>
 			<td><c:out value="${dato.getNombre()}"></c:out></td>
+			<td><a href="<%=request.getContextPath()%>/Update?id=<c:out value="${dato.getId()}" />">Editar</a> </td>
 		</tr>
 	</c:forEach>
 </body>

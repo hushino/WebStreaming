@@ -56,12 +56,12 @@ public class Anime implements Serializable {
 	}
 
 	// Getters y Setters
-	public Long getCodigo() {
-		return id;
+	public Long getId() {
+		return this.id;
 	}
 
-	public void setCodigo(Long codigo) {
-		this.id = codigo;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
