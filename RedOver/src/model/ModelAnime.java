@@ -17,6 +17,7 @@ public class ModelAnime {
 		session = HibernateUtil.getSessionFactory().openSession(); 
 		ArrayList<Anime> arreglo = new ArrayList<Anime>();
 		for (Object oneObject : session.createQuery("FROM Anime")
+				.setMaxResults(10)
 				.getResultList()
 			)
 		{

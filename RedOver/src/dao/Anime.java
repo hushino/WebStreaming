@@ -41,7 +41,7 @@ public class Anime implements Serializable {
 	@Column
 	private LocalDateTime fechadeEmision;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "anime", cascade = CascadeType.ALL)
 	private List<Episodio> episodio = new ArrayList<>();
 
 	// Constructor

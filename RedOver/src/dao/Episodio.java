@@ -28,7 +28,7 @@ public class Episodio {
 	@Column
 	private LocalDateTime timestap;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ANIME_ID")
 	private Anime anime;
 

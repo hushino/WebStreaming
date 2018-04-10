@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Anime;
 import model.ModelAnime;
 
-@WebServlet("/home")
+@WebServlet("/")
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,7 +32,6 @@ public class Home extends HttpServlet {
 		List<Anime> datos = op.getAnime();
 		request.setAttribute("datos", datos);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
