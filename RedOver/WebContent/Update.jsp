@@ -12,13 +12,13 @@
 		method="post">
 
 		<div class="form-group">
-			<label for="exampleInputEmail1">Nombre</label> <input type="text" value="${dato.getNombre}"
+			<label for="exampleInputEmail1">Nombre</label> <input type="text" value="${dato.getNombre()}"
 				class="form-control" id="exampleInputEmail1" placeholder="Nombre"
 				name="nom" />
 		</div>
 
 		<div class="form-group">
-			<label for="exampleInputEmail1">E-Mail</label> <input type="text" value="${dato.getNombre}"
+			<label for="exampleInputEmail1">E-Mail</label> <input type="text" value="${dato.getNombre()}"
 				class="form-control" id="exampleInputEmail1" placeholder="E-Mail"
 				name="correo" />
 		</div>
