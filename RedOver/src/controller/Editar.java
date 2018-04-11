@@ -25,7 +25,7 @@ public class Editar extends HttpServlet {
 		 request.setAttribute("nombre", nombre);
 		 request.setAttribute("correo", correo);
 		 request.setAttribute("id", id);
-		 request.getRequestDispatcher("Update.jsp").forward(request, response);
+		 request.getRequestDispatcher("editar.jsp").forward(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

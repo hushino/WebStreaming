@@ -14,14 +14,14 @@
 		<div class="form-group">
 			<label for="exampleInputEmail1">Nombre</label> <input type="text"
 				value="<c:out value="${correo}" />" class="form-control"
-				id="nombre" placeholder="Nombre" name="nombre" />
+				id="nombre" placeholder="Nombre" name="correo" />
 
 		</div>
 
 		<div class="form-group">
 			<label for="exampleInputEmail1">E-Mail</label> <input type="text"
 				value="<c:out value="${nombre}" />" class="form-control"
-				id="correo" placeholder="E-Mail" name="correo" />
+				id="correo" placeholder="E-Mail" name="nombre" />
 		</div>
 
 		<button type="submit" class="btn btn-default">Enviar</button>

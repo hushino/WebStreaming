@@ -2,7 +2,8 @@ package controller;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException; 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Anime;
 import model.UtilsAnime;
 
- 
+@WebServlet("/Update")
 public class Update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -20,7 +21,7 @@ public class Update extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
 		Anime anime = op.ShowAnime(Long.parseLong(request.getParameter("id")));
-		anime.setNombre(request.getParameter("nom"));
+		anime.setNombre(request.getParameter("nombre"));
 		anime.setApellido(request.getParameter("correo"));
 		op.updateAnime(anime);
 		response.sendRedirect(request.getContextPath());
