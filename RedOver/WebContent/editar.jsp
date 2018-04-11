@@ -10,20 +10,22 @@
 <body>
 	<form name="form" action="<%=request.getContextPath()%>/Update"
 		method="post">
-
+		<input type="number" value="<c:out value="${id}"/>" name="id">
 		<div class="form-group">
-			<label for="exampleInputEmail1">Nombre</label> <input type="text" value="${dato.getNombre()}"
-				class="form-control" id="exampleInputEmail1" placeholder="Nombre"
-				name="nom" />
+			<label for="exampleInputEmail1">Nombre</label> <input type="text"
+				value="<c:out value="${correo}" />" class="form-control"
+				id="nombre" placeholder="Nombre" name="nombre" />
+
 		</div>
 
 		<div class="form-group">
-			<label for="exampleInputEmail1">E-Mail</label> <input type="text" value="${dato.getNombre()}"
-				class="form-control" id="exampleInputEmail1" placeholder="E-Mail"
-				name="correo" />
+			<label for="exampleInputEmail1">E-Mail</label> <input type="text"
+				value="<c:out value="${nombre}" />" class="form-control"
+				id="correo" placeholder="E-Mail" name="correo" />
 		</div>
 
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
+	
 </body>
 </html>

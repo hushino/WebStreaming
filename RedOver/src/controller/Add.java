@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Anime;
-import model.ModelAdd;
+import model.UtilsAnime;
 
 @WebServlet("/Add")
 public class Add extends HttpServlet {
@@ -23,7 +23,7 @@ public class Add extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 
-		ModelAdd op = new ModelAdd();
+		UtilsAnime op = new UtilsAnime();
 
 		op.addAnime(new Anime(
 				

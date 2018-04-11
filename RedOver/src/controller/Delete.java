@@ -7,21 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.ModelDelete;
+ 
+import model.UtilsAnime;
 
 @WebServlet("/Delete")
 public class Delete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/*
-	 * public Delete() { super();
-	 * 
-	 * }
-	 */
+
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		ModelDelete op = new ModelDelete();
+		UtilsAnime op = new UtilsAnime();
 		long id=Long.parseLong(request.getParameter("id"));
 		op.deleteUsuario(id);
 		response.sendRedirect("");
