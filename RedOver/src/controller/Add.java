@@ -30,8 +30,8 @@ public class Add extends HttpServlet {
 		
 		op.addAnime(new Anime(
 				
-								request.getParameter("nom"), 
-								request.getParameter("correo"),
+								request.getParameter("title"), 
+								request.getParameter("sinopsis"),
 								null,
 								request.getParameter("type"),
 								tecs,

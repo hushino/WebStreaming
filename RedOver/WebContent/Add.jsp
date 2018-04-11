@@ -13,11 +13,11 @@
 		 
 			<label for="exampleInputEmail1">Nombre</label> <input type="text"
 				class="form-control" id="exampleInputEmail1" placeholder="Nombre"
-				name="nom" />
+				name="title" />
 		 
 			<label for="exampleInputEmail1">E-Mail</label> <input type="text"
 				class="form-control" id="exampleInputEmail1" placeholder="E-Mail"
-				name="correo" />
+				name="sinopsis" />
 		 
 			<select multiple="multiple" name="tags"  size="4" tabindex="1" id="tags">
 				<option value="Accion">Accion</option>
