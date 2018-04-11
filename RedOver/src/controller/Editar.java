@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Anime;
 import model.UtilsAnime;
 
-@WebServlet(name = "Update", urlPatterns = {"/Update"})
-public class Edit extends HttpServlet {
+@WebServlet(name = "Editar", urlPatterns = {"/Editar"})
+public class Editar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
