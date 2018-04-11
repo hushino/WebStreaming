@@ -20,8 +20,8 @@ public class Editar extends HttpServlet {
 		 UtilsAnime op = new UtilsAnime();
 		 Anime anime = op.ShowAnime(Long.parseLong(request.getParameter("id")));
 		 long id = anime.getId();
-		 String nombre = anime.getNombre();
-		 String correo = anime.getApellido();
+		 String nombre = anime.getTitle();
+		 String correo = anime.getSynopsis();
 		 request.setAttribute("nombre", nombre);
 		 request.setAttribute("correo", correo);
 		 request.setAttribute("id", id);

@@ -12,10 +12,16 @@
 	<a href="Add.jsp">link text</a>
 	<c:forEach items="${datos}" var="dato">
 		<tr>
-			<td><c:out value="${dato.getNombre()}"></c:out></td>
-			<td><a href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />">Ver</a> </td>
-			<td><a href="<%=request.getContextPath()%>/Editar?id=<c:out value="${dato.getId()}" />">Editar</a> </td>
-			<td><a href="<%=request.getContextPath()%>/Delete?id=<c:out value="${dato.getId()}" />">Eliminar</a> </td>
+			<td><c:out value="${dato.getTitle()}"></c:out></td>
+			<td><a
+				href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />">Ver</a>
+			</td>
+			<td><a
+				href="<%=request.getContextPath()%>/Editar?id=<c:out value="${dato.getId()}" />">Editar</a>
+			</td>
+			<td><a
+				href="<%=request.getContextPath()%>/Delete?id=<c:out value="${dato.getId()}" />">Eliminar</a>
+			</td>
 		</tr>
 	</c:forEach>
 </body>

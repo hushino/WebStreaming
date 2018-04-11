@@ -29,7 +29,7 @@ public class Add extends HttpServlet {
 				
 								request.getParameter("nom"), 
 								request.getParameter("correo"), 
-								null
+								null,null,null,null,null,null,null,null
 				             )
 				
 				   );

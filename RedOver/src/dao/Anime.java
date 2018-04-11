@@ -33,10 +33,31 @@ public class Anime implements Serializable {
 	private Long id;
 
 	@Column
-	private String nombre;
+	private String title;
 
 	@Column
-	private String apellido;
+	private String synopsis;
+
+	@Column
+	private String estate;
+
+	@Column
+	private String type;
+
+	@Column
+	private String[] tags;
+
+	@Column
+	private String categoria;
+
+	@Column
+	private String frontimage;
+
+	@Column
+	private String cover;
+
+	@Column
+	private String backgroundimage;
 
 	@Column
 	private LocalDateTime fechadeEmision;
@@ -49,10 +70,91 @@ public class Anime implements Serializable {
 
 	}
 
-	public Anime(String nombre, String apellido, LocalDateTime fechadeEmision) {
-		this.nombre = nombre;
-		this.apellido = apellido;
+	public Anime(String title, String synopsis, String estate, String type, String[] tags, String categoria,
+			String frontimage, String cover, String backgroundimage, LocalDateTime fechadeEmision) {
+
+		this.title = title;
+		this.synopsis = synopsis;
+		this.estate = estate;
+		this.type = type;
+		this.tags = tags;
+		this.categoria = categoria;
+		this.frontimage = frontimage;
+		this.cover = cover;
+		this.backgroundimage = backgroundimage;
 		this.fechadeEmision = fechadeEmision;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
+	}
+
+	public String getEstate() {
+		return estate;
+	}
+
+	public void setEstate(String estate) {
+		this.estate = estate;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String[] getTags() {
+		return tags;
+	}
+
+	public void setTags(String[] tags) {
+		this.tags = tags;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getFrontimage() {
+		return frontimage;
+	}
+
+	public void setFrontimage(String frontimage) {
+		this.frontimage = frontimage;
+	}
+
+	public String getCover() {
+		return cover;
+	}
+
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
+
+	public String getBackgroundimage() {
+		return backgroundimage;
+	}
+
+	public void setBackgroundimage(String backgroundimage) {
+		this.backgroundimage = backgroundimage;
 	}
 
 	// Getters y Setters
@@ -62,22 +164,6 @@ public class Anime implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
 	}
 
 	public LocalDateTime getFechadeEmision() {
