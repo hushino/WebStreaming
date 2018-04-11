@@ -24,7 +24,6 @@ public class Home extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 	}
 	
-	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

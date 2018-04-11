@@ -45,7 +45,7 @@ public class Anime implements Serializable {
 	private String type;
 
 	@Column
-	private String[] tags;
+	private String tags;
 
 	@Column
 	private String categoria;
@@ -70,7 +70,7 @@ public class Anime implements Serializable {
 
 	}
 
-	public Anime(String title, String synopsis, String estate, String type, String[] tags, String categoria,
+	public Anime(String title, String synopsis, String estate, String type, String tags, String categoria,
 			String frontimage, String cover, String backgroundimage, LocalDateTime fechadeEmision) {
 
 		this.title = title;
@@ -117,11 +117,11 @@ public class Anime implements Serializable {
 		this.type = type;
 	}
 
-	public String[] getTags() {
+	public String  getTags() {
 		return tags;
 	}
 
-	public void setTags(String[] tags) {
+	public void setTags(String  tags) {
 		this.tags = tags;
 	}
 

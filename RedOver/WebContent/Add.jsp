@@ -8,22 +8,39 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form name="form" action="<%=request.getContextPath()%>/Add"
+	<form class="lel" id="lel" name="form" action="<%=request.getContextPath()%>/Add"
 		method="post">
-
-		<div class="form-group">
+		 
 			<label for="exampleInputEmail1">Nombre</label> <input type="text"
 				class="form-control" id="exampleInputEmail1" placeholder="Nombre"
 				name="nom" />
-		</div>
-
-		<div class="form-group">
+		 
 			<label for="exampleInputEmail1">E-Mail</label> <input type="text"
 				class="form-control" id="exampleInputEmail1" placeholder="E-Mail"
 				name="correo" />
-		</div>
-
-		<button type="submit" class="btn btn-default">Enviar</button>
+		 
+			<select multiple="multiple" name="tags"  size="4" tabindex="1" id="tags">
+				<option value="Accion">Accion</option>
+				<option value="Aventura">Aventura</option>
+				<option value="Seinen">Seinen</option>
+				<option value="Yuri">Yuri</option>
+			</select>
+		 
+		 	<select name="type" id="type">
+          		<option value="Anime">Anime</option>
+          		<option value="OVA">OVA</option>
+          		<option value="Pelicula">Pelicula</option>
+          		<option value="Corto">Corto</option>
+       		 </select>
+		
+		<button type="submit" id="btn" class="btn btn-default">Enviar</button>
 	</form>
+<!-- 
+	<script>
+		$('#lel').on('btn', function(e) {
+			e.preventDefault();
+			var cuisines = $('tags').val().join(',');
+		});
+	</script>  -->
 </body>
 </html>

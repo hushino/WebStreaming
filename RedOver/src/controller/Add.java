@@ -24,18 +24,25 @@ public class Add extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 
 		UtilsAnime op = new UtilsAnime();
-
+		
+		String[] tec = request.getParameterValues("tags");
+		String tecs = String.join(",", tec);
+		
 		op.addAnime(new Anime(
 				
 								request.getParameter("nom"), 
-								request.getParameter("correo"), 
-								null,null,null,null,null,null,null,null
+								request.getParameter("correo"),
+								null,
+								request.getParameter("type"),
+								tecs,
+								null, null, null, null, null
 				             )
 				
 				   );
 		response.sendRedirect("");
 	}
-
+	/*request.getParameter("tags"),
+	request.getParameter("type")*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
