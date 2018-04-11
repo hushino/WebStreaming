@@ -17,6 +17,5 @@
 			<td><a href="<%=request.getContextPath()%>/Delete?id=<c:out value="${dato.getId()}" />">Eliminar</a> </td>
 		</tr>
 	</c:forEach>
-	
 </body>
 </html>
