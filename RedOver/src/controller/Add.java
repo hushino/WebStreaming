@@ -41,8 +41,7 @@ public class Add extends HttpServlet {
 				   );
 		response.sendRedirect("");
 	}
-	/*request.getParameter("tags"),
-	request.getParameter("type")*/
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
