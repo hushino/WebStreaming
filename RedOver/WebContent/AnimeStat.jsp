@@ -10,14 +10,14 @@
 </head>
 <body>
 	<c:out value="${datos.getTitle()}"></c:out>
-	<%-- <c:out value="${datos.getEpisodio}"></c:out> --%>
 
-	<c:forEach items="${datos}" var="dato">
+	<c:forEach items="${datos.getEpisodio()}" var="dato">
 		<tr>
-			 
-				<%-- <td><c:out value="${dato }"></c:out></td> --%>
-			 
+
+			<td><c:out value="${ dato.getTitle() }"></c:out></td>
+
 		</tr>
 	</c:forEach>
+
 </body>
 </html>
