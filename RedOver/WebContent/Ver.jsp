@@ -9,5 +9,6 @@
 </head>
 <body>
 <c:out value="${capitulos.getTitle()}"></c:out>
+<a href="<%=request.getContextPath()%>/Anime">ver anime</a>
 </body>
 </html>

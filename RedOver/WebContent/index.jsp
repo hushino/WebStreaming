@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>Hola sekai</h1>
-	<a href="Add.jsp">link text</a>
+	<a href="Add.jsp">Crear Nuevo Anime</a>
 
 	<div class="elemento">
 		<c:forEach items="${capitulos}" var="capitulos">
