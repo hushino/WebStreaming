@@ -10,22 +10,61 @@
 <body>
 	<form name="form" action="<%=request.getContextPath()%>/Update"
 		method="post">
+		
 		<input type="number" value="<c:out value="${id}"/>" name="id">
-		<div class="form-group">
-			<label for="exampleInputEmail1">Nombre</label> <input type="text"
-				value="<c:out value="${correo}" />" class="form-control"
-				id="title" placeholder="Nombre" name="correo" />
+		
+		
+		 
+			<label for="exampleInputEmail1">Title</label> <input type="text"
+				value="<c:out value="${title}" />" class="form-control" id="title"
+				placeholder="title" name="title" />
 
-		</div>
+	 
 
-		<div class="form-group">
-			<label for="exampleInputEmail1">E-Mail</label> <input type="text"
-				value="<c:out value="${nombre}" />" class="form-control"
-				id="sinopsis" placeholder="E-Mail" name="nombre" />
-		</div>
+	 
+			<label for="exampleInputEmail1">Sinopsis</label> <input type="text"
+				value="<c:out value="${sinopsis}" />" class="form-control"
+				id="sinopsis" placeholder="sinopsis" name="sinopsis" />
+	 
+
+
+
+	  
+			<label for="exampleInputEmail1">state</label> <input type="text"
+				value="<c:out value="${state}" />" class="form-control" id="state"
+				placeholder="state" name="state" />
+	 
+ 
+
+
+
+		 
+			<label for="exampleInputEmail1">type</label> <input type="text"
+				value="<c:out value="${type}" />" class="form-control" id="type"
+				placeholder="type" name="type" />
+	 
+		
+	 
+			<label for="exampleInputEmail1">tags</label> <input type="text"
+				value="<c:out value="${tags}" />" class="form-control" id="tags"
+				placeholder="tags" name="tags" />
+		 
+		
+	 
+			<label for="exampleInputEmail1">frontimage</label> <input type="text"
+				value="<c:out value="${frontimage}" />" class="form-control"
+				id="frontimage" placeholder="frontimage" name="frontimage" />
+		 
+		
+	 
+			<label for="exampleInputEmail1">backgroundimage</label> <input
+				type="text" value="<c:out value="${backgroundimage}" />"
+				class="form-control" id="backgroundimage"
+				placeholder="backgroundimage" name="backgroundimage" />
+		 
 
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
-	
+
 </body>
 </html>

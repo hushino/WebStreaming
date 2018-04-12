@@ -1,20 +1,22 @@
-package controller;
+package controller.cEpisodes;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.Anime;
-import model.UtilsAnime;
+import dao.Episodio;
+import model.UtilsCaps;
 
-@WebServlet("/Add")
-public class Add extends HttpServlet {
+@WebServlet("/")
+public class CapsHome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Add() {
+	public CapsHome() {
 		super();
 
 	}
@@ -22,34 +24,21 @@ public class Add extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-
-		UtilsAnime op = new UtilsAnime();
-		
-		String[] tec = request.getParameterValues("tags");
-		String tecs = String.join(",", tec);
-		
-		op.addAnime(new Anime(
-				
-								request.getParameter("title"), 
-								request.getParameter("sinopsis"),
-								request.getParameter("state"),
-								request.getParameter("type"),
-								tecs,
-								request.getParameter("frontimage"),
-								request.getParameter("backgroundimage"), null
-				             )
-				
-				   );
-		response.sendRedirect("");
+		UtilsCaps op = new UtilsCaps();
+		List<Episodio> capitulos = op.getEpisodio();
+		request.setAttribute("capitulos", capitulos);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		processRequest(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		processRequest(request, response);
 	}
 

@@ -22,7 +22,7 @@ public class ShowById extends HttpServlet {
 		long id=Long.parseLong(request.getParameter("id"));
 		Anime datos = op.ShowAnime(id);
 		request.setAttribute("datos", datos);
-		request.getRequestDispatcher("Anime.jsp").forward(request, response);
+		request.getRequestDispatcher("AnimeStat.jsp").forward(request, response);
 	}
 
 

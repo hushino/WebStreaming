@@ -21,8 +21,13 @@ public class Update extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
 		Anime anime = op.ShowAnime(Long.parseLong(request.getParameter("id")));
-		anime.setTitle(request.getParameter("nombre"));
-		anime.setSynopsis(request.getParameter("correo"));
+		anime.setTitle(request.getParameter("title"));
+		anime.setSynopsis(request.getParameter("sinopsis"));
+		anime.setState(request.getParameter("state"));
+		anime.setType(request.getParameter("type"));
+		anime.setTags(request.getParameter("tags"));
+		anime.setFrontimage(request.getParameter("frontimage"));
+		anime.setBackgroundimage(request.getParameter("backgroundimage"));
 		op.updateAnime(anime);
 		response.sendRedirect(request.getContextPath());
 

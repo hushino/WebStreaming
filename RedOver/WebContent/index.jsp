@@ -10,19 +10,18 @@
 <body>
 	<h1>Hola sekai</h1>
 	<a href="Add.jsp">link text</a>
-	<c:forEach items="${datos}" var="dato">
-		<tr>
-			<td><c:out value="${dato.getTitle()}"></c:out></td>
-			<td><a
-				href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />">Ver</a>
-			</td>
-			<td><a
-				href="<%=request.getContextPath()%>/Editar?id=<c:out value="${dato.getId()}" />">Editar</a>
-			</td>
-			<td><a
-				href="<%=request.getContextPath()%>/Delete?id=<c:out value="${dato.getId()}" />">Eliminar</a>
-			</td>
-		</tr>
-	</c:forEach>
+
+	<div class="elemento">
+		<c:forEach items="${capitulos}" var="capitulos">
+
+			<div class="caps">
+
+				<c:out value="${capitulos.getTitle()}"></c:out>
+				<img src=<c:out value="${capitulos.getImageCap()}"></c:out>
+					alt="Mountain View"> 
+					<a href="<%=request.getContextPath()%>/Ver?id=<c:out value="${capitulos.getId()}" />">ver</a>
+			</div>
+		</c:forEach>
+	</div>
 </body>
 </html>

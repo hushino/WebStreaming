@@ -39,7 +39,7 @@ public class Anime implements Serializable {
 	private String synopsis;
 
 	@Column
-	private String estate;
+	private String state;
 
 	@Column
 	private String type;
@@ -48,13 +48,7 @@ public class Anime implements Serializable {
 	private String tags;
 
 	@Column
-	private String categoria;
-
-	@Column
 	private String frontimage;
-
-	@Column
-	private String cover;
 
 	@Column
 	private String backgroundimage;
@@ -70,17 +64,15 @@ public class Anime implements Serializable {
 
 	}
 
-	public Anime(String title, String synopsis, String estate, String type, String tags, String categoria,
-			String frontimage, String cover, String backgroundimage, LocalDateTime fechadeEmision) {
+	public Anime(String title, String synopsis, String state, String type, String tags, String frontimage,
+			String backgroundimage, LocalDateTime fechadeEmision) {
 
 		this.title = title;
 		this.synopsis = synopsis;
-		this.estate = estate;
+		this.state = state;
 		this.type = type;
 		this.tags = tags;
-		this.categoria = categoria;
 		this.frontimage = frontimage;
-		this.cover = cover;
 		this.backgroundimage = backgroundimage;
 		this.fechadeEmision = fechadeEmision;
 	}
@@ -101,12 +93,12 @@ public class Anime implements Serializable {
 		this.synopsis = synopsis;
 	}
 
-	public String getEstate() {
-		return estate;
+	public String getState() {
+		return state;
 	}
 
-	public void setEstate(String estate) {
-		this.estate = estate;
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public String getType() {
@@ -117,20 +109,12 @@ public class Anime implements Serializable {
 		this.type = type;
 	}
 
-	public String  getTags() {
+	public String getTags() {
 		return tags;
 	}
 
-	public void setTags(String  tags) {
+	public void setTags(String tags) {
 		this.tags = tags;
-	}
-
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
 	}
 
 	public String getFrontimage() {
@@ -139,14 +123,6 @@ public class Anime implements Serializable {
 
 	public void setFrontimage(String frontimage) {
 		this.frontimage = frontimage;
-	}
-
-	public String getCover() {
-		return cover;
-	}
-
-	public void setCover(String cover) {
-		this.cover = cover;
 	}
 
 	public String getBackgroundimage() {
