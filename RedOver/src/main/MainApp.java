@@ -13,7 +13,7 @@ public class MainApp {
 			transaction.begin();
 			Anime anime = new Anime("lel", "dsa", null);
 			Episodio episodio = new Episodio("asd", 34, "server", null, anime);
-			session.find(Anime.class, 1l);
+			//session.find(Anime.class, 1l);
 			session.save(anime);
 			session.save(episodio);
 			System.out.println("Last Name = " + anime.getNombre());

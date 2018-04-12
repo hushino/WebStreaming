@@ -12,7 +12,7 @@
 
 			<div class="caps">
 
-				<c:out value="${capitulos.getTitle()}"></c:out>
+				<c:out value="${capitulos.getTitleCap()}"></c:out>
 				<img src=<c:out value="${capitulos.getImageCap()}"></c:out>
 					alt="Mountain View"> 
 					<a href="<%=request.getContextPath()%>/Ver?id=<c:out value="${capitulos.getId()}" />">ver</a>

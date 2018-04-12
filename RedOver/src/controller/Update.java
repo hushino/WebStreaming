@@ -2,24 +2,28 @@ package controller;
 
 import java.io.IOException;
 
-import javax.servlet.ServletException;
+import javax.servlet.ServletException; 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Anime;
+import dao.Episodio;
 import model.UtilsAnime;
+import model.UtilsCaps;
 
 @WebServlet("/Update")
 public class Update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
+	 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
+		UtilsCaps op2 = new UtilsCaps();
 		Anime anime = op.ShowAnime(Long.parseLong(request.getParameter("id")));
 		anime.setTitle(request.getParameter("title"));
 		anime.setSynopsis(request.getParameter("sinopsis"));
@@ -29,11 +33,13 @@ public class Update extends HttpServlet {
 		anime.setFrontimage(request.getParameter("frontimage"));
 		anime.setBackgroundimage(request.getParameter("backgroundimage"));
 		op.updateAnime(anime);
-		response.sendRedirect(request.getContextPath());
 
+		op2.AddCapitulo(new Episodio(request.getParameter("titleCap"), request.getParameter("imageCap"), Integer.parseInt(request.getParameter("chapter")), request.getParameter("server"), null, anime));
+		
+		response.sendRedirect(request.getContextPath());
 	}
 
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);

@@ -27,7 +27,7 @@ public class Episodio {
 	private Long id;
 
 	@Column
-	private String title;
+	private String titleCap;
 
 	@Column
 	private String imageCap;
@@ -49,8 +49,8 @@ public class Episodio {
 
 	}
 
-	public Episodio(String title, String imageCap, int chapter, String server, LocalDateTime timestap, Anime anime) {
-		this.title = title;
+	public Episodio(String titleCap, String imageCap, int chapter, String server, LocalDateTime timestap, Anime anime) {
+		this.titleCap = titleCap;
 		this.imageCap = imageCap;
 		this.chapter = chapter;
 		this.server = server;
@@ -74,12 +74,12 @@ public class Episodio {
 		this.imageCap = imageCap;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getTitleCap() {
+		return titleCap;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitleCap(String title) {
+		this.titleCap = title;
 	}
 
 	public int getChapter() {

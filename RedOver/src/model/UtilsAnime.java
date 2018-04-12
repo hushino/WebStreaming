@@ -57,6 +57,7 @@ public class UtilsAnime {
 		session.close();
 	}
 	
+	//Find By Id
 	public Anime ShowAnime(Long id) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
