@@ -150,11 +150,11 @@ public class Anime implements Serializable {
 		this.fechadeEmision = fechadeEmision;
 	}
 
-	public java.util.List<Episodio> getEpisodio() {
+	public List<Episodio> getEpisodio() {
 		return episodio;
 	}
 
-	public void setEpisodio(java.util.List<Episodio> episodio) {
+	public void setEpisodio(List<Episodio> episodio) {
 		this.episodio = episodio;
 	}
 
