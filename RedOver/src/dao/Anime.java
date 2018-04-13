@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+ 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,11 +19,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
+@Cache(region = "animeCache",usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Anime implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -56,6 +60,8 @@ public class Anime implements Serializable {
 	@Column
 	private LocalDateTime fechadeEmision;
 
+	
+    @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL)
 	private List<Episodio> episodio = new ArrayList<>();
 

@@ -16,7 +16,10 @@ public class UtilsCaps {
 	public List<Episodio> getEpisodio() {
 		session = HibernateUtil.getSessionFactory().openSession();
 		ArrayList<Episodio> arreglo = new ArrayList<Episodio>();
-		for (Object oneObject : session.createQuery("FROM Episodio").setMaxResults(10).getResultList()) {
+		for (Object oneObject : session.createQuery("FROM Episodio").setMaxResults(10)
+				.setHint("org.hibernate.cacheable", true)
+				.getResultList()) 
+		{
 			arreglo.add((Episodio) oneObject);
 		}
 		session.close();

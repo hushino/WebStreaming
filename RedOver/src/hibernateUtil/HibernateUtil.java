@@ -31,6 +31,20 @@ public class HibernateUtil {
 				settings.put(Environment.SHOW_SQL, "true");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 				
+				// Enable second level cache (default value is true)
+	            settings.put(Environment.USE_SECOND_LEVEL_CACHE, true);
+	            // Enable cache mysql (default value is false)
+	            settings.put(Environment.USE_QUERY_CACHE, true);
+	            
+	            // Specify cache region factory class
+	            settings.put(Environment.CACHE_REGION_FACTORY,
+	                  "org.hibernate.cache.jcache.JCacheRegionFactory");
+	            
+	            // Specify cache provider
+	            settings.put("hibernate.javax.cache.provider", 
+	                  "org.ehcache.jsr107.EhcacheCachingProvider");
+				 
+				
 				// HikariCP settings
 				settings.put("cachePrepStmts", "true");
 				settings.put("prepStmtCacheSize", "250");

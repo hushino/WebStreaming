@@ -3,6 +3,7 @@ package dao;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+ 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,11 +16,14 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
+@Cache(region = "episodioCache",usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Episodio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,6 +45,7 @@ public class Episodio {
 	@Column
 	private LocalDateTime timestap;
 
+	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ANIME_ID")
 	private Anime anime;
