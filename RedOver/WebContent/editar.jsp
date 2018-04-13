@@ -4,6 +4,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="contenedor">
+		<div class="elemento">
 	<form name="form" action="<%=request.getContextPath()%>/Update"
 		method="post">
 		
@@ -59,7 +61,8 @@
 
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
-
+</div>
+</div>
 <%-- <form name="form" action="<%=request.getContextPath()%>/Update"
 		method="post"> --%>
 		

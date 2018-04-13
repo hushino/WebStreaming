@@ -4,6 +4,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="contenedor">
+		<div class="elemento">
 	<form class="lel" id="lel" name="form" action="<%=request.getContextPath()%>/Add"
 		method="post">
 		 
@@ -46,6 +48,9 @@
 		
 		<button type="submit" id="btn" class="btn btn-default">Enviar</button>
 	</form>
+</div>
+</div>
+
 <!-- 
 	<script>
 		$('#lel').on('btn', function(e) {

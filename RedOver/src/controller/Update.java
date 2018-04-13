@@ -35,8 +35,8 @@ public class Update extends HttpServlet {
 		op.updateAnime(anime);
 
 		op2.AddCapitulo(new Episodio(request.getParameter("titleCap"), request.getParameter("imageCap"), Integer.parseInt(request.getParameter("chapter")), request.getParameter("server"), null, anime));
-		
-		response.sendRedirect(request.getContextPath());
+		 
+		 response.sendRedirect(request.getContextPath());
 	}
 
 	

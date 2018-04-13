@@ -40,7 +40,8 @@ public class Add extends HttpServlet {
 				             )
 				
 				   );
-		response.sendRedirect("");
+		//response.sendRedirect("");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
