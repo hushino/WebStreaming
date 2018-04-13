@@ -26,7 +26,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
-@Cache(region = "animeCache",usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cache(region = "animeCache",usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Anime implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -61,7 +61,7 @@ public class Anime implements Serializable {
 	private LocalDateTime fechadeEmision;
 
 	
-    @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+   // @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL)
 	private List<Episodio> episodio = new ArrayList<>();
 

@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -23,8 +24,11 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
-@Cache(region = "episodioCache",usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Episodio {
+@Cache(region = "episodioCache",usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+public class Episodio implements Serializable {
+ 
+	private static final long serialVersionUID = 2L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
@@ -45,7 +49,7 @@ public class Episodio {
 	@Column
 	private LocalDateTime timestap;
 
-	@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ANIME_ID")
 	private Anime anime;
