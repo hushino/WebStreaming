@@ -36,7 +36,7 @@ public class HibernateUtil {
 	            
 	            settings.put(Environment.USE_QUERY_CACHE, true);
 	            
-	           // settings.put(Environment.GENERATE_STATISTICS, true);
+	            // settings.put(Environment.GENERATE_STATISTICS, true);
 	            // Specify cache region factory class
 	            settings.put(Environment.CACHE_REGION_FACTORY,
 	                  "org.hibernate.cache.jcache.JCacheRegionFactory");
@@ -44,7 +44,7 @@ public class HibernateUtil {
 	            // Specify cache provider
 	            settings.put("hibernate.javax.cache.provider", 
 	                  "org.ehcache.jsr107.EhcacheCachingProvider");
-				 
+				
 				
 				// HikariCP settings
 				settings.put("cachePrepStmts", "true");

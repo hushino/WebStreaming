@@ -1,0 +1,32 @@
+<ehcache:config
+    xmlns:ehcache="http://www.ehcache.org/v3"
+    xmlns:jcache="http://www.ehcache.org/v3/jsr107">
+<!-- Sample, for Enterprise Ehcache only, demonstrating a tiered cache with in-memory,
+ off-heap and disk stores. In this example the in-memory (on-heap) store is limited to 10,000 items
+ ... which for example for 1k items would use 10MB of memory, the off-heap store is limited to 4GB and
+ the disk store is unlimited in size. -->
+<!--  <cache name="animeCache"
+           maxEntriesLocalHeap="10000"
+           eternal="false"
+           timeToLiveSeconds="99600"
+           overflowToOffHeap="true"
+           maxBytesLocalOffHeap="2g"
+           
+           diskExpiryThreadIntervalSeconds="80">
+        <persistence strategy="localTempSwap"/>
+  </cache>
+ <cache name="episodioCache"
+           maxEntriesLocalHeap="10000"
+           eternal="false"
+           timeToLiveSeconds="99600"
+           overflowToOffHeap="true"
+           maxBytesLocalOffHeap="2g"
+           diskExpiryThreadIntervalSeconds="80">
+        <persistence strategy="localTempSwap"/>
+  </cache>
+  <cache>
+        <searchable allowDynamicIndexing="true"/>
+  </cache> -->
+ 
+
+</ehcache:config>
