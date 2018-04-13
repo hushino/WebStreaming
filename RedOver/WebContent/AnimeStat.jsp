@@ -9,7 +9,7 @@
 	<c:forEach items="${datos.getEpisodio()}" var="dato">
 		<tr>
 
-			<td><c:out value="${ dato.getTitle() }"></c:out></td>
+			<td><c:out value="${ dato.getTitleCap() }"></c:out></td>
 
 		</tr>
 	</c:forEach>

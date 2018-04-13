@@ -5,21 +5,24 @@
 <title>Anime</title>
 </head>
 <body>
-
-<c:forEach items="${datos}" var="dato">
-		<tr>
-			<td><c:out value="${dato.getTitle()}"></c:out></td>
-			<td><a
-				href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />">Ver</a>
-			</td>
-			<td><a
+<div class="contenedor">
+<div class="elemento">
+<div class="sada1">
+<c:forEach items="${datos}" var="dato" >
+		<a href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />"><img class="image" id="image-home"
+						src=<c:out value="${dato.getFrontimage()}"></c:out>
+						alt="Card image cap"></a>
+		 
+			<h4><c:out value="${dato.getTitle()}"></c:out></h4>
+			<h4><a
 				href="<%=request.getContextPath()%>/Editar?id=<c:out value="${dato.getId()}" />">Editar</a>
-			</td>
-			<td><a
+			</h4>
+			<h4><a
 				href="<%=request.getContextPath()%>/Delete?id=<c:out value="${dato.getId()}" />">Eliminar</a>
-			</td>
-		</tr>
+			</h4>
 	</c:forEach>
-
+</div>
+</div>
+</div>
 </body>
 </html>
