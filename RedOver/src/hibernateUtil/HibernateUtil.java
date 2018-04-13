@@ -33,8 +33,6 @@ public class HibernateUtil {
 				
 				// Enable second level cache (default value is true)
 	            settings.put(Environment.USE_SECOND_LEVEL_CACHE, true);
-	            // Enable cache mysql (default value is false)
-	            settings.put(Environment.USE_QUERY_CACHE, true);
 	            
 	            // Specify cache region factory class
 	            settings.put(Environment.CACHE_REGION_FACTORY,
