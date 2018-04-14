@@ -35,7 +35,7 @@ public class UtilsAnime {
 	public List<Anime> getAnime() {
 		session = HibernateUtil.getSessionFactory().openSession(); 
 		ArrayList<Anime> arreglo = new ArrayList<Anime>();
-		for (Object oneObject : session.createQuery("FROM Anime")
+		for (Object oneObject : session.createQuery("FROM Anime a ORDER BY a.UpdateDate DESC")
 				//.setHint("org.hibernate.cacheable", true)
 				.setMaxResults(10)
 				.getResultList()

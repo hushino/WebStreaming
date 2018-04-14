@@ -6,8 +6,9 @@
 <body>
 <div class="contenedor">
 <div class="elemento">
-<div class="sada1">
+
 <c:forEach items="${datos}" var="dato" >
+<div class="sada1">
 		<a href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />"><img class="image" id="image-home"
 						src=<c:out value="${dato.getFrontimage()}"></c:out>
 						alt="Card image cap"></a>
@@ -19,8 +20,8 @@
 			<h4><a
 				href="<%=request.getContextPath()%>/Delete?id=<c:out value="${dato.getId()}" />">Eliminar</a>
 			</h4>
+			</div>
 	</c:forEach>
-</div>
 </div>
 </div>
 </body>
