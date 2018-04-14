@@ -23,7 +23,7 @@
 								var playerInstance = jwplayer("myElement");
 								playerInstance
 										.setup({
-											file : "http://i.4cdn.org/gif/1523546765559.webm",
+											file : "https://content.jwplatform.com/videos/1g8jjku3-cIp6U8lV.mp4",
 											width : "100%",
 											image : "https://cdn.discordapp.com/attachments/423287746547810324/434381755458256897/Comic_2.mp4_snapshot_22.56.jpg",
 											aspectratio : "16:9",
