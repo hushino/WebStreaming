@@ -8,6 +8,7 @@
 		<div class="elemento">
 	<c:out value="${datos.getTitle()}"></c:out>
 
+ 
 	<c:forEach items="${datos.getEpisodio()}" var="dato">
 		<tr>
 

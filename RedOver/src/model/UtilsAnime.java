@@ -69,7 +69,8 @@ public class UtilsAnime {
 		return anime;
 	}
 	
-	public void updateAnime(Anime anime) {
+	
+	 public void updateAnime(Anime anime) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
 		transaction.begin();
@@ -77,6 +78,8 @@ public class UtilsAnime {
 		transaction.commit();
 		session.close();
 
-	}
+	} 
+
+	 
 	
 }

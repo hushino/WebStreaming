@@ -1,6 +1,6 @@
 package controller;
 
-import java.io.IOException;
+import java.io.IOException; 
 
 import javax.servlet.ServletException; 
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +17,6 @@ import model.UtilsCaps;
 public class Update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -34,12 +33,20 @@ public class Update extends HttpServlet {
 		anime.setBackgroundimage(request.getParameter("backgroundimage"));
 		op.updateAnime(anime);
 
-		op2.AddCapitulo(new Episodio(request.getParameter("titleCap"), request.getParameter("imageCap"), Integer.parseInt(request.getParameter("chapter")), request.getParameter("server"), null, anime));
+		op2.AddCapitulo(new Episodio(request.getParameter("titleCap"),
+				request.getParameter("imageCap"),
+				Integer.parseInt(request.getParameter("chapter")),
+				request.getParameter("server"),
+				Long.parseLong(request.getParameter("parentId")),
+				null,
+				anime
+				
+				));
 		 
 		 response.sendRedirect(request.getContextPath());
 	}
 
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);

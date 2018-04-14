@@ -58,6 +58,9 @@
 			<label for="exampleInputEmail1">server</label> <input type="text"
 				class="form-control" id="server" placeholder="server"
 				name="server" />
+				
+			<input type="number" value="<c:out value="${id}"/>" name="parentId">
+			 
 
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>

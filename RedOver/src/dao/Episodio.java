@@ -1,17 +1,17 @@
 package dao;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDateTime; 
+import java.util.Date; 
 
- 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumn; 
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -45,27 +45,56 @@ public class Episodio implements Serializable {
 
 	@Column
 	private String server;
+	
+	@Column
+	private Long parentId;
 
 	@Column
 	private LocalDateTime timestap;
-
-	//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "ANIME_ID")
-	private Anime anime;
-
+	
+	/*@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "id_anime", joinColumns = {@JoinColumn(name ="fk_episodio")},
+				inverseJoinColumns = {@JoinColumn(name = "fk_anime")})
+	private List<Anime> animes = new ArrayList<Anime>();*/
+	
+	
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "IdAnime")
+	private Anime anime;  
+	
 	public Episodio() {
 
 	}
-
-	public Episodio(String titleCap, String imageCap, int chapter, String server, LocalDateTime timestap, Anime anime) {
+ 
+	public Episodio(String titleCap, String imageCap, int chapter, String server, Long parentId, LocalDateTime timestap,
+			Anime anime) {
+		 
 		this.titleCap = titleCap;
 		this.imageCap = imageCap;
 		this.chapter = chapter;
 		this.server = server;
+		this.parentId = parentId;
 		this.timestap = timestap;
 		this.anime = anime;
 	}
+
+	public Long getParentId() {
+		return parentId;
+	}
+
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
+	}
+	
+	
+	public Anime getAnime() {
+		return anime;
+	}
+
+	public void setAnime(Anime anime) {
+		this.anime = anime;
+	}
+	 
 
 	public Long getId() {
 		return id;

@@ -10,8 +10,14 @@
 			<div class="elementoVideo">
 				<div class="container">
 					<div class="row">
+
+				 	 <%-- <c:forEach items="${capitulos.getAnime()}" var="dati">
+							<c:out value="${dati.getTitleCap()}"></c:out>
+						</c:forEach>   --%>  
+
 						<h1><%--  <%@include file="/public/static/image1.png" %> --%>
 							<a href="<%=request.getContextPath()%>/Anime">ver anime</a>
+							<a href="<%=request.getContextPath()%>/Show?id=<c:out value="${capitulos.getParentId()}" />">VER</a>
 							<c:out value="${capitulos.getTitleCap()}"></c:out>
 						</h1>
 						<div class="media80">

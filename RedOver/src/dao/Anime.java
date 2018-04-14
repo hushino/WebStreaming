@@ -60,19 +60,22 @@ public class Anime implements Serializable {
 	@Column
 	private LocalDateTime fechadeEmision;
 
-	
-   // @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL)
-	private List<Episodio> episodio = new ArrayList<>();
+	/*@ManyToMany(fetch = FetchType.EAGER, mappedBy = "animes", cascade = CascadeType.ALL) 
+	private List<Episodio>episodios = new ArrayList<Episodio>();*/
+    
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL) 
+	private List<Episodio> episodio = new ArrayList<Episodio>();  
 
 	// Constructor
 	public Anime() {
 
 	}
 
+	 
+	
 	public Anime(String title, String synopsis, String state, String type, String tags, String frontimage,
 			String backgroundimage, LocalDateTime fechadeEmision) {
-
+	 
 		this.title = title;
 		this.synopsis = synopsis;
 		this.state = state;
@@ -82,6 +85,8 @@ public class Anime implements Serializable {
 		this.backgroundimage = backgroundimage;
 		this.fechadeEmision = fechadeEmision;
 	}
+
+
 
 	public String getTitle() {
 		return title;
@@ -156,13 +161,14 @@ public class Anime implements Serializable {
 		this.fechadeEmision = fechadeEmision;
 	}
 
-	public List<Episodio> getEpisodio() {
+ 
+	   public List<Episodio> getEpisodio() {
 		return episodio;
 	}
 
 	public void setEpisodio(List<Episodio> episodio) {
 		this.episodio = episodio;
-	}
+	} 
 
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
