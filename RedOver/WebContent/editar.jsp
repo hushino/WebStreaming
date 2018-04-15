@@ -65,7 +65,9 @@
 		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
 </div>
+
 </div>
+
 <%-- <form name="form" action="<%=request.getContextPath()%>/Update"
 		method="post"> --%>
 		
@@ -86,4 +88,5 @@
 <!-- <button type="submit" class="btn btn-default">Enviar Nuevo Capitulo</button>
 	</form> -->
 </body>
+<%@include file="partials/footer.jsp"%>
 </html>

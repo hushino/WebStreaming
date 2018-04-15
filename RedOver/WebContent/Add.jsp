@@ -59,4 +59,5 @@
 		});
 	</script>  -->
 </body>
+<%@include file="partials/footer.jsp"%>
 </html>

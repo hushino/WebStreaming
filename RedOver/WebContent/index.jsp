@@ -1,14 +1,17 @@
 <%@include file="partials/header.jsp"%>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@ page pageEncoding="UTF-8" %>
 <title>Index</title>
 </head>
 <body>
 	<div class="contenedor">
 		<div class="elemento">
-			
 				<c:forEach items="${capitulos}" var="capitulos">
 				<div class="caps">
+				<%-- <c:url var="url" value="Ver.jsp">
+					<c:param name="id" value="${capitulos.getTitleCap()}"></c:param>
+				</c:url> --%>
+				<a href="${url}">link</a>
 					<a href="<%=request.getContextPath()%>/Ver?id=<c:out value="${capitulos.getId()}"/>"><img class="episodeimage"
 						src=<c:out value="${capitulos.getImageCap()}"></c:out>
 						alt="Mountain View"></a>
@@ -16,8 +19,7 @@
 						</div>
 				</c:forEach>
 		</div>
-		<%@include file="partials/footer.jsp"%>
 	</div>
+	<%@include file="partials/footer.jsp"%>
 </body>
-
 </html>
