@@ -41,5 +41,4 @@ public class CapsHome extends HttpServlet {
 
 		processRequest(request, response);
 	}
-
 }
