@@ -1,6 +1,5 @@
 <%@include file="partials/header.jsp"%>
 <head>
-<%@ page pageEncoding="UTF-8" %>
 <title>Index</title>
 </head>
 <body>
