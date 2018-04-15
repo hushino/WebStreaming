@@ -16,7 +16,7 @@ public class UtilsCaps {
 	public List<Episodio> getEpisodio() {
 		session = HibernateUtil.getSessionFactory().openSession();
 		ArrayList<Episodio> arreglo = new ArrayList<Episodio>();
-		for (Object oneObject : session.createQuery("FROM Episodio b ORDER BY b.UpdateDate ASC")
+		for (Object oneObject : session.createQuery("FROM Episodio b ORDER BY b.UpdateDate DESC")
 				.setMaxResults(10)
 				//.setHint("org.hibernate.cacheable", true)
 				.getResultList()) 
