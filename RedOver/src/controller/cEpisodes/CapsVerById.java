@@ -20,7 +20,7 @@ public class CapsVerById extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsCaps op = new UtilsCaps();
 		long id=Long.parseLong(request.getParameter("id"));
-		//String titleCap = request.getParameter("id");
+		//String titleCap = request.getParameter("titleCap");
 		Episodio capitulos = op.ShowEpisodio(id);
 		request.setAttribute("capitulos", capitulos);
 		request.getRequestDispatcher("Ver.jsp").forward(request, response);
