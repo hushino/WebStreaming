@@ -36,10 +36,10 @@ public class Anime implements Serializable {
 	@Column
 	private Long id;
 
-	@Column
+	@Column(length = 100)
 	private String title;
 
-	@Column
+	@Column(length = 900)
 	private String synopsis;
 
 	@Column
@@ -51,10 +51,10 @@ public class Anime implements Serializable {
 	@Column
 	private String tags;
 
-	@Column
+	@Column(length = 500)
 	private String frontimage;
 
-	@Column
+	@Column(length = 500)
 	private String backgroundimage;
 
 	@Column

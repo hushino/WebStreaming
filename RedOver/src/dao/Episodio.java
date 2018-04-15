@@ -34,16 +34,16 @@ public class Episodio implements Serializable {
 	@Column
 	private Long id;
 
-	@Column
+	@Column(length = 100)
 	private String titleCap;
 
-	@Column
+	@Column(length = 900)
 	private String imageCap;
 
 	@Column
 	private int chapter;
 
-	@Column
+	@Column(length = 300)
 	private String server;
 	
 	@Column
