@@ -98,11 +98,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: rgb(0, 0, 0) 0px 1px 1px;
+  box-sizing: border-box;  
 }
 
 .sada1 {
