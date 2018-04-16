@@ -36,6 +36,7 @@ public class UtilsCaps {
 		session.close();
 		return episodio;
 	}
+	
 	public void AddCapitulo(Episodio episodio) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
