@@ -29,7 +29,6 @@ public class CapsHome extends HttpServlet {
 		request.setAttribute("capitulos", capitulos);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
