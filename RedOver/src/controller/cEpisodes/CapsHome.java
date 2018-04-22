@@ -20,7 +20,6 @@ public class CapsHome extends HttpServlet {
 		super();
 
 	}
-
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -34,7 +33,6 @@ public class CapsHome extends HttpServlet {
 
 		processRequest(request, response);
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
