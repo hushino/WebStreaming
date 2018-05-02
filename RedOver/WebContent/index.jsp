@@ -13,7 +13,7 @@
 					<c:param name="titleCap" value="${capitulos.getTitleCap()}"></c:param>
 				</c:url>  
 				<a href="<%=request.getContextPath()%>/${titleCap}">link</a> --%>
- 
+				
 					<a href="<%=request.getContextPath()%>/Ver?id=<c:out value="${capitulos.getId()}"/>">
 					<img class="episodeimage"
 						src=<c:out value="${capitulos.getImageCap()}"></c:out>
