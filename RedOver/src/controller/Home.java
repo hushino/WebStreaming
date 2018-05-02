@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.Anime; 
-import model.UtilsAnime;
+import dao.Anime;
+import model.UtilsAnime; 
 
 @WebServlet("/Anime")
 public class Home extends HttpServlet {
@@ -26,7 +26,7 @@ public class Home extends HttpServlet {
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+	
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
 		List<Anime> datos = op.getAnime();
