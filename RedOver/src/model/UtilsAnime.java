@@ -29,7 +29,7 @@ public class UtilsAnime {
 				session.close();
 			}
 		}
-
+	
 	}
 
 	public List<Anime> getAnime() {
@@ -45,7 +45,7 @@ public class UtilsAnime {
 		}
 		session.close();
 		return arreglo;
-
+	
 	}
 	
 	public void deleteUsuario(Long id) {
@@ -69,7 +69,6 @@ public class UtilsAnime {
 		return anime;
 	}
 	
-	
 	 public void updateAnime(Anime anime) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
@@ -77,9 +76,7 @@ public class UtilsAnime {
 		session.update(anime);
 		transaction.commit();
 		session.close();
-
+	
 	} 
-
-	 
 	
 }

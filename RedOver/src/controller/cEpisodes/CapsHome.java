@@ -18,9 +18,8 @@ public class CapsHome extends HttpServlet {
 
 	public CapsHome() {
 		super();
-
 	}
-	
+
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -29,11 +28,13 @@ public class CapsHome extends HttpServlet {
 		request.setAttribute("capitulos", capitulos);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		processRequest(request, response);
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
