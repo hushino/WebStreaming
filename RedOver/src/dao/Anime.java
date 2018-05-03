@@ -74,7 +74,7 @@ public class Anime implements Serializable {
 
 	public Anime(String title, String synopsis, String state, String type, String tags, String frontimage,
 			String backgroundimage, LocalDateTime fechadeEmision) {
-
+	
 		this.title = title;
 		this.synopsis = synopsis;
 		this.state = state;
