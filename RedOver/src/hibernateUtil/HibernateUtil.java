@@ -45,7 +45,6 @@ public class HibernateUtil {
 	            settings.put("hibernate.javax.cache.provider", 
 	                  "org.ehcache.jsr107.EhcacheCachingProvider");
 				
-				
 				// HikariCP settings
 				settings.put("cachePrepStmts", "true");
 				settings.put("prepStmtCacheSize", "250");
@@ -69,7 +68,8 @@ public class HibernateUtil {
 						.addAnnotatedClass(Episodio.class);
 				Metadata metadata = sources.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();
-			} catch (Exception e) {
+				
+			}catch (Exception e) {
 				if (registry != null) {
 					StandardServiceRegistryBuilder.destroy(registry);
 				}
