@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import dao.Anime;
 import model.UtilsAnime; 
 
+//@PreAuthorize("hasAnyRole('ADMIN')")
 @WebServlet("/Anime")
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
