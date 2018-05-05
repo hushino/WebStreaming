@@ -1,13 +1,9 @@
 package model;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
  
-import dao.Users;
-import hibernateUtil.HibernateUtil;
 
 public class UtilsUser {
-	Session session = null;
+	/*Session session = null;
 	Transaction transaction = null;
 	
 	public void addUser(Users user) {
@@ -27,6 +23,6 @@ public class UtilsUser {
 			}
 		}
 	
-	}
+	}*/
 
 }

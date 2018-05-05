@@ -12,6 +12,8 @@ import org.hibernate.cfg.Environment;
 
 import dao.Anime;
 import dao.Episodio;
+import dao.Role;
+import dao.Users;
 
 public class HibernateUtil {
 	private static StandardServiceRegistry registry;
@@ -65,7 +67,9 @@ public class HibernateUtil {
 
 				registry = registryBuilder.build();
 				MetadataSources sources = new MetadataSources(registry).addAnnotatedClass(Anime.class)
-						.addAnnotatedClass(Episodio.class);
+						.addAnnotatedClass(Episodio.class)
+						.addAnnotatedClass(Role.class)
+						.addAnnotatedClass(Users.class);
 				Metadata metadata = sources.getMetadataBuilder().build();
 				sessionFactory = metadata.getSessionFactoryBuilder().build();
 				
