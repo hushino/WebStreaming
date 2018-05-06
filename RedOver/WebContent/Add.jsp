@@ -26,12 +26,12 @@
 				class="form-control" id="exampleInputEmail1" placeholder="backgroundimage"
 				name="backgroundimage" />
 		 
-			<select multiple="multiple" name="tags"  size="4" tabindex="1" id="tags">
+			<!-- <select multiple="multiple" name="tags"  size="4" tabindex="1" id="tags">
 				<option value="Accion">Accion</option>
 				<option value="Aventura">Aventura</option>
 				<option value="Seinen">Seinen</option>
 				<option value="Yuri">Yuri</option>
-			</select>
+			</select> -->
 		 
 		 	<select name="type" id="type">
           		<option value="Anime">Anime</option>

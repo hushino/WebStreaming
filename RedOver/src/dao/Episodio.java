@@ -86,7 +86,6 @@ public class Episodio implements Serializable {
 		this.parentId = parentId;
 	}
 	
-	
 	public Anime getAnime() {
 		return anime;
 	}
@@ -94,7 +93,6 @@ public class Episodio implements Serializable {
 	public void setAnime(Anime anime) {
 		this.anime = anime;
 	}
-	 
 
 	public Long getId() {
 		return id;
@@ -152,6 +150,6 @@ public class Episodio implements Serializable {
 	@UpdateTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "update_date")
-	private Date UpdateDate;
+	private Date updateDate;
 
 }

@@ -29,13 +29,12 @@ public class UtilsAnime {
 				session.close();
 			}
 		}
-	
 	}
 
 	public List<Anime> getAnime() {
 		session = HibernateUtil.getSessionFactory().openSession(); 
-		ArrayList<Anime> arreglo = new ArrayList<Anime>();
-		for (Object oneObject : session.createQuery("FROM Anime a ORDER BY a.UpdateDate DESC")
+		ArrayList<Anime> arreglo = new ArrayList<>();
+		for (Object oneObject : session.createQuery("FROM Anime a ORDER BY a.updateDate DESC")
 				//.setHint("org.hibernate.cacheable", true)
 				.setMaxResults(10)
 				.getResultList()
@@ -52,18 +51,18 @@ public class UtilsAnime {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
 		transaction.begin();
-		Anime anime = (Anime) session.get(Anime.class, id);
+		Anime anime = session.get(Anime.class, id);
 		session.delete(anime);
 		transaction.commit();
 		session.close();
 	}
 	
 	//Find By Id
-	public Anime ShowAnime(Long id) {
+	public Anime showAnime(Long id) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
 		transaction.begin();
-		Anime anime = (Anime) session.get(Anime.class, id);
+		Anime anime =  session.get(Anime.class, id);
 		transaction.commit();
 		session.close();
 		return anime;

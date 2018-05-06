@@ -15,8 +15,8 @@ public class UtilsCaps {
 
 	public List<Episodio> getEpisodio() {
 		session = HibernateUtil.getSessionFactory().openSession();
-		ArrayList<Episodio> arreglo = new ArrayList<Episodio>();
-		for (Object oneObject : session.createQuery("FROM Episodio b ORDER BY b.UpdateDate DESC")
+		ArrayList<Episodio> arreglo = new ArrayList<>();
+		for (Object oneObject : session.createQuery("FROM Episodio b ORDER BY b.updateDate DESC")
 				.setMaxResults(10)
 				//.setHint("org.hibernate.cacheable", true)
 				.getResultList())
@@ -31,7 +31,7 @@ public class UtilsCaps {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();
 		transaction.begin();
-		Episodio episodio = (Episodio) session.get(Episodio.class, id);
+		Episodio episodio = session.get(Episodio.class, id);
 		transaction.commit();
 		session.close();
 		return episodio;

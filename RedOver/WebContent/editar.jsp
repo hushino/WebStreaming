@@ -30,9 +30,9 @@
 				placeholder="type" name="type" />
 	 
 	 
-			<label for="exampleInputEmail1">tags</label> <input type="text"
+			<%-- <label for="exampleInputEmail1">tags</label> <input type="text"
 				value="<c:out value="${tags}" />" class="form-control" id="tags"
-				placeholder="tags" name="tags" />
+				placeholder="tags" name="tags" /> --%>
 		 
 	 
 			<label for="exampleInputEmail1">frontimage</label> <input type="text"

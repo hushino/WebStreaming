@@ -18,17 +18,17 @@ public class Update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws IOException {
 
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
 		UtilsCaps op2 = new UtilsCaps();
-		Anime anime = op.ShowAnime(Long.parseLong(request.getParameter("id")));
+		Anime anime = op.showAnime(Long.parseLong(request.getParameter("id")));
 		anime.setTitle(request.getParameter("title"));
 		anime.setSynopsis(request.getParameter("sinopsis"));
 		anime.setState(request.getParameter("state"));
-		anime.setType(request.getParameter("type"));
-		anime.setTags(request.getParameter("tags"));
+		anime.setType(request.getParameter("type"));/*
+		anime.setTags(request.getParameter("tags"));*/
 		anime.setFrontimage(request.getParameter("frontimage"));
 		anime.setBackgroundimage(request.getParameter("backgroundimage"));
 		op.updateAnime(anime);
@@ -46,15 +46,23 @@ public class Update extends HttpServlet {
 		 response.sendRedirect(request.getContextPath());
 	}
 
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		processRequest(request, response);
+		try {
+			processRequest(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		processRequest(request, response);
+		try {
+			processRequest(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 

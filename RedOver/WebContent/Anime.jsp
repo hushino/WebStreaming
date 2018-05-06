@@ -6,6 +6,10 @@
 <div class="contenedor">
 <div class="elemento">
 
+<%-- <c:forEach items="${tag}" var="tags" >
+<h4><c:out value="${tags.getTagName()}"></c:out></h4>
+</c:forEach>
+ --%>
 <c:forEach items="${datos}" var="dato" >
 <div class="sada1">
 		<a href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />"><img class="image" id="image-home"
@@ -13,6 +17,7 @@
 						alt="Card image cap"></a>
 		 
 			<h4><c:out value="${dato.getTitle()}"></c:out></h4>
+			
 			<h4><a
 				href="<%=request.getContextPath()%>/Editar?id=<c:out value="${dato.getId()}" />">Editar</a>
 			</h4>

@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +15,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -32,7 +35,7 @@ public class Anime implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
+	@Column(name = "animeId")
 	private Long id;
 
 	@Column(length = 100)
@@ -46,9 +49,6 @@ public class Anime implements Serializable {
 
 	@Column
 	private String type;
-
-	@Column
-	private String tags;
 
 	@Column(length = 500)
 	private String frontimage;
@@ -64,22 +64,32 @@ public class Anime implements Serializable {
 	 * CascadeType.ALL) private List<Episodio>episodios = new ArrayList<Episodio>();
 	 */
 
+	@ManyToMany(mappedBy = "animes")
+	private Set<Tags> tags = new HashSet<>();
+
+	public Set<Tags> getTags() {
+		return tags;
+	}
+
+	public void setTags(Set<Tags> tags) {
+		this.tags = tags;
+	}
+
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL)
-	private List<Episodio> episodio = new ArrayList<Episodio>();
+	private List<Episodio> episodio = new ArrayList<>();
 
 	// Constructor
 	public Anime() {
 
 	}
 
-	public Anime(String title, String synopsis, String state, String type, String tags, String frontimage,
-			String backgroundimage, LocalDateTime fechadeEmision) {
-	
+	public Anime(String title, String synopsis, String state, String type, String frontimage, String backgroundimage,
+			LocalDateTime fechadeEmision) {
+
 		this.title = title;
 		this.synopsis = synopsis;
 		this.state = state;
 		this.type = type;
-		this.tags = tags;
 		this.frontimage = frontimage;
 		this.backgroundimage = backgroundimage;
 		this.fechadeEmision = fechadeEmision;
@@ -115,14 +125,6 @@ public class Anime implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
-	}
-
-	public String getTags() {
-		return tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
 	}
 
 	public String getFrontimage() {
@@ -173,7 +175,7 @@ public class Anime implements Serializable {
 
 	@UpdateTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "Update_date")
-	private Date UpdateDate;
+	@Column(name = "update_date")
+	private Date updateDate;
 
 }

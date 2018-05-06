@@ -26,9 +26,21 @@ public class Users {
 	private Set<Role> roles;
 
 	public Users() {
+		// Empy constructor
 	}
-
-	public Users(Users users) {
+	
+	public Users(int id, String email, String password, String name, String lastName, int active, Set<Role> roles) {
+		
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.lastName = lastName;
+		this.active = active;
+		this.roles = roles;
+	}
+	
+	/*public Users(Users users) {
 		this.active = users.getActive();
 		this.email = users.getEmail();
 		this.roles = users.getRoles();
@@ -36,11 +48,13 @@ public class Users {
 		this.lastName = users.getLastName();
 		this.id = users.getId();
 		this.password = users.getPassword();
-	}
+	}*/
 
 	public int getId() {
 		return id;
 	}
+
+	
 
 	public void setId(int id) {
 		this.id = id;

@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import dao.Anime;
-import model.UtilsAnime; 
+import dao.Episodio;
+import dao.Tags;
+import model.UtilsAnime;
+import model.UtilsCaps;
+import model.UtilsTags; 
 
 
 @WebServlet("/Anime")
@@ -23,7 +27,9 @@ public class Home extends HttpServlet {
 		super();
 	}
 
+	@Override
 	public void init(ServletConfig config) throws ServletException {
+		// init
 	}
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -32,10 +38,14 @@ public class Home extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
 		List<Anime> datos = op.getAnime();
+		/*UtilsTags op2 = new UtilsTags();
+		List<Tags> tag = op2.getTags();*/
 		request.setAttribute("datos", datos);
+		/*request.setAttribute("tag", tag);*/
 		request.getRequestDispatcher("Anime.jsp").forward(request, response);
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
