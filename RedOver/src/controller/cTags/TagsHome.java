@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Tags;
 import model.UtilsTags;
 
 @WebServlet("/Tags")
-public class Tags extends HttpServlet {
+public class TagsHome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Tags() {
+	public TagsHome() {
 		super();
 	}
 
@@ -25,7 +26,7 @@ public class Tags extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		UtilsTags op2 = new UtilsTags();
-		List<dao.Tags>  tag =  op2.getTags();
+		List<Tags>  tag =  op2.getTags();
 		request.setAttribute("tag", tag);
 		request.getRequestDispatcher("tags.jsp").forward(request, response);
 	}
