@@ -13,6 +13,9 @@
 				<h4>
 					<c:out value="${tags.getTagName()}"></c:out>
 				</h4>
+				<h4>
+					<c:out value="${tags.getAnimes()}"></c:out>
+				</h4>
 			</c:forEach>
 
 		</div>

@@ -15,11 +15,10 @@
 			</div>
 			<nav>
 				<%-- <a href="<%=request.getContextPath()%>/Anime">Series</a> --%>
-			
+				<a href="<%=request.getContextPath()%>/Tags">Generos</a>
 				<a href="<%=request.getContextPath()%>/Anime">Lista de animes</a>
-			
-				 <a href="Add.jsp">Crear Nuevo Anime</a>
-			</nav>
+				<a href="Add.jsp">Crear Nuevo Anime</a>
+		</nav>
 		</header>
 
 	</div>

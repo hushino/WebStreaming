@@ -26,18 +26,18 @@ public class TagsHome extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		
 		UtilsTags op2 = new UtilsTags();
-		List<Tags>  tag =  op2.getTags();
+		List<Tags> tag =  op2.getTags();
 		request.setAttribute("tag", tag);
 		request.getRequestDispatcher("tags.jsp").forward(request, response);
 	}
 	
-	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		processRequest(request, response);
 	}
-
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
