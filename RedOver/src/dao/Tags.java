@@ -1,7 +1,9 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -43,14 +45,14 @@ public class Tags {
 
 	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JoinTable(name = "tag_anime", joinColumns = { @JoinColumn(name = "tag_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "animeId") })
-	private Set<Anime> animes = new HashSet<>();
+			@JoinColumn(name = "id_tag") })
+	public List<Anime> animes = new ArrayList<>();
 
 	public Tags() {
 		// Empy constructor
 	}
 
-	public Tags(int id, String tagName, Set<Anime> animes, Date createDate, Date updateDate) {
+	public Tags(int id, String tagName, List<Anime> animes, Date createDate, Date updateDate) {
 		
 		this.id = id;
 		this.tagName = tagName;
@@ -75,11 +77,11 @@ public class Tags {
 		this.tagName = tagName;
 	}
 
-	public Set<Anime> getAnimes() {
+	public List<Anime> getAnimes() {
 		return animes;
 	}
 
-	public void setAnimes(Set<Anime> animes) {
+	public void setAnimes(List<Anime> animes) {
 		this.animes = animes;
 	}
 

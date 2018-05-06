@@ -65,13 +65,14 @@ public class Anime implements Serializable {
 	 */
 
 	@ManyToMany(mappedBy = "animes")
-	private Set<Tags> tags = new HashSet<>();
+	private List<Tags> tags = new ArrayList<>();
 
-	public Set<Tags> getTags() {
+
+	public List<Tags> getTags() {
 		return tags;
 	}
 
-	public void setTags(Set<Tags> tags) {
+	public void setTags(List<Tags> tags) {
 		this.tags = tags;
 	}
 

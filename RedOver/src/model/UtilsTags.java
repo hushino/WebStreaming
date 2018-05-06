@@ -1,6 +1,7 @@
 package model;
 
  
+import java.util.ArrayList;
 import java.util.List;
 
  
@@ -16,17 +17,17 @@ public class UtilsTags {
 	
 	public List<Tags> getTags() {
 		session = HibernateUtil.getSessionFactory().openSession();
-		@SuppressWarnings("unchecked")
-		List<Tags> tags = session.createQuery("from Tags").list();
+		/*@SuppressWarnings("unchecked")
+		List<Tags> tags = session.createQuery("from Tags").list();*/
 		
-		/*ArrayList<Tags> arreglo = new ArrayList<>();
-		for (Object object : session.createQuery("FROM Tag").list() 
+		ArrayList<Tags> arreglo = new ArrayList<>();
+		for (Object object : session.createQuery("from Tags").setMaxResults(10).getResultList()
 				
 			)
 		{
 			arreglo.add((Tags) object);
-		}*/
+		}
 		session.close();
-		return tags;
+		return arreglo;
 	}
 }

@@ -25,8 +25,8 @@ public class TagsHome extends HttpServlet {
 	
 		response.setContentType("text/html;charset=UTF-8");
 		
-		UtilsTags op2 = new UtilsTags();
-		List<Tags> tag =  op2.getTags();
+		UtilsTags op = new UtilsTags();
+		List<Tags> tag =  op.getTags();
 		request.setAttribute("tag", tag);
 		request.getRequestDispatcher("tags.jsp").forward(request, response);
 	}
