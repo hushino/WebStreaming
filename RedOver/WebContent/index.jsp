@@ -23,6 +23,7 @@
 						</div>
 				</c:forEach>
 		</div>
+		
 	</div>
 </body>
 <%@include file="partials/footer.jsp"%>
