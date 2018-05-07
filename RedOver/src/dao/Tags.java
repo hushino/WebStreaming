@@ -62,11 +62,10 @@ public class Tags implements Serializable {
 	@JoinColumn(name = "animeidtag")
 	private List<Anime> animes = new ArrayList<>();
 
-	
 	public Tags() {
 		// Empy constructor
 	}
- 
+
 	/*
 	 * public Tags(int id, String tagName, List<Anime> animes, Date createDate, Date
 	 * updateDate) {
@@ -76,7 +75,7 @@ public class Tags implements Serializable {
 	 */
 
 	public Tags(Long id, String tagName, Long idParent, List<Anime> animes, Date createDate, Date updateDate) {
-	 
+
 		this.id = id;
 		this.tagName = tagName;
 		this.idParent = idParent;

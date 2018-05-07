@@ -20,11 +20,7 @@ public class TagsHome extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html;charset=UTF-8");
-
-		/*UtilsTags op = new UtilsTags();
-		List<Tags> tag = op.getTags();
-		request.setAttribute("tag", tag);
-		request.getRequestDispatcher("tags.jsp").forward(request, response);*/
+ 
 		UtilsTags op = new UtilsTags();
 		long id = Long.parseLong(request.getParameter("id"));
 		Tags tags = op.findbyId(id);

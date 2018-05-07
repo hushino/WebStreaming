@@ -66,8 +66,10 @@ public class Anime implements Serializable {
 	 * CascadeType.ALL) private List<Episodio>episodios = new ArrayList<Episodio>();
 	 */
 
-	/*@ManyToMany(fetch = FetchType.EAGER, mappedBy = "animes", cascade = CascadeType.ALL)
-	private List<Tags> tags = new ArrayList<>();*/
+	/*
+	 * @ManyToMany(fetch = FetchType.EAGER, mappedBy = "animes", cascade =
+	 * CascadeType.ALL) private List<Tags> tags = new ArrayList<>();
+	 */
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
 	private List<Tags> tags = new ArrayList<>();

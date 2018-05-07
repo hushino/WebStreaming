@@ -16,7 +16,7 @@ import dao.Role;
 import dao.Tags;
 import dao.Users;
 
-public class HibernateUtil {
+public class HibernateUtil  {
 	private static StandardServiceRegistry registry;
 	private static SessionFactory sessionFactory;
 
@@ -30,7 +30,7 @@ public class HibernateUtil {
 				settings.put(Environment.URL, "jdbc:mysql://localhost:3306/mysqlds");
 				settings.put(Environment.USER, "root");
 				settings.put(Environment.PASS, "");
-				settings.put(Environment.HBM2DDL_AUTO, "update");
+				settings.put(Environment.HBM2DDL_AUTO, "create");
 				settings.put(Environment.SHOW_SQL, "true");
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 				
