@@ -17,7 +17,9 @@ public class CapsVerById extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		response.setContentType("text/html;charset=UTF-8");
+		
 		UtilsCaps op = new UtilsCaps();
 		long id=Long.parseLong(request.getParameter("id"));
 		//String titleCap = request.getParameter("titleCap");

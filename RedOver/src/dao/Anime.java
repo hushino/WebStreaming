@@ -24,6 +24,8 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
@@ -64,17 +66,11 @@ public class Anime implements Serializable {
 	 * CascadeType.ALL) private List<Episodio>episodios = new ArrayList<Episodio>();
 	 */
 
-	@ManyToMany(mappedBy = "animes")
+	/*@ManyToMany(fetch = FetchType.EAGER, mappedBy = "animes", cascade = CascadeType.ALL)
+	private List<Tags> tags = new ArrayList<>();*/
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
 	private List<Tags> tags = new ArrayList<>();
-
-
-	public List<Tags> getTags() {
-		return tags;
-	}
-
-	public void setTags(List<Tags> tags) {
-		this.tags = tags;
-	}
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade = CascadeType.ALL)
 	private List<Episodio> episodio = new ArrayList<>();
@@ -94,6 +90,14 @@ public class Anime implements Serializable {
 		this.frontimage = frontimage;
 		this.backgroundimage = backgroundimage;
 		this.fechadeEmision = fechadeEmision;
+	}
+
+	public List<Tags> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tags> tags) {
+		this.tags = tags;
 	}
 
 	public String getTitle() {

@@ -21,8 +21,8 @@ public class UtilsTags {
 		List<Tags> tags = session.createQuery("from Tags").list();*/
 		
 		ArrayList<Tags> arreglo = new ArrayList<>();
-		for (Object object : session.createQuery("from Tags").setMaxResults(10).getResultList()
-				
+		for (Object object : session.createQuery("from Tags").getResultList()
+				 
 			)
 		{
 			arreglo.add((Tags) object);
@@ -30,4 +30,15 @@ public class UtilsTags {
 		session.close();
 		return arreglo;
 	}
+	
+	public Tags findbyId(Long id) {
+		session = HibernateUtil.getSessionFactory().openSession();
+		transaction = session.getTransaction();
+		transaction.begin();
+		Tags tags = session.get(Tags.class, id);
+		transaction.commit();
+		session.close();
+		return tags;
+	}
+	
 }
