@@ -37,7 +37,7 @@ public class Anime implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "animeId")
+	@Column(name = "anime_id")
 	private Long id;
 
 	@Column(length = 100)
@@ -61,15 +61,6 @@ public class Anime implements Serializable {
 	@Column
 	private LocalDateTime fechadeEmision;
 
-	/*
-	 * @ManyToMany(fetch = FetchType.EAGER, mappedBy = "animes", cascade =
-	 * CascadeType.ALL) private List<Episodio>episodios = new ArrayList<Episodio>();
-	 */
-
-	/*
-	 * @ManyToMany(fetch = FetchType.EAGER, mappedBy = "animes", cascade =
-	 * CascadeType.ALL) private List<Tags> tags = new ArrayList<>();
-	 */
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
 	private List<Tags> tags = new ArrayList<>();

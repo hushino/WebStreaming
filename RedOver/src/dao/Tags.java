@@ -40,39 +40,15 @@ public class Tags implements Serializable {
 	@Column
 	private Long idParent;
 
-	/*
-	 * @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	 * 
-	 * @JoinTable(name = "tag_anime", joinColumns = @JoinColumn(name = "tag_id"),
-	 * inverseJoinColumns = @JoinColumn(name = "animeId")) private Set<Anime>
-	 * animes;
-	 */
-
-	/*
-	 * @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	 * 
-	 * @JoinTable(name = "tag_anime", joinColumns = { @JoinColumn(name = "tag_id")
-	 * }, inverseJoinColumns = {
-	 * 
-	 * @JoinColumn(name = "id_tag") }) public List<Anime> animes = new
-	 * ArrayList<>();
-	 */
-
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "tag_anime", joinColumns = { @JoinColumn(name = "tag_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "anime_id") })
 	@JoinColumn(name = "animeidtag")
 	private List<Anime> animes = new ArrayList<>();
 
 	public Tags() {
 		// Empy constructor
 	}
-
-	/*
-	 * public Tags(int id, String tagName, List<Anime> animes, Date createDate, Date
-	 * updateDate) {
-	 * 
-	 * this.id = id; this.tagName = tagName; this.animes = animes; this.createDate =
-	 * createDate; this.updateDate = updateDate; }
-	 */
 
 	public Tags(Long id, String tagName, Long idParent, List<Anime> animes, Date createDate, Date updateDate) {
 
