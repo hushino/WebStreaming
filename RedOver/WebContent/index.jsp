@@ -8,7 +8,8 @@
 				<c:forEach items="${capitulos}" var="capitulos">
 				<div class="caps">
 				
-				<%-- 
+				<%-- http://localhost:8080/RedOver/Tags?id=1
+				
 		        <c:url var="titleCap" value="Ver.jsp">
 					<c:param name="titleCap" value="${capitulos.getTitleCap()}"></c:param>
 				</c:url>  

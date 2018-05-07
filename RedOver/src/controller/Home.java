@@ -10,13 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import dao.Anime;
-import dao.Episodio;
-import dao.Tags;
-import model.UtilsAnime;
-import model.UtilsCaps;
-import model.UtilsTags; 
+import model.UtilsAnime; 
 
 
 @WebServlet("/Anime")
