@@ -1,7 +1,9 @@
 package dao;
 
 import javax.persistence.*;
-import java.util.Set;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -11,50 +13,43 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "user_id")
 	private int id;
+	
 	@Column(name = "email")
 	private String email;
+	
 	@Column(name = "password")
 	private String password;
+	
 	@Column(name = "name")
 	private String name;
+	
 	@Column(name = "last_name")
 	private String lastName;
+	
 	@Column(name = "active")
 	private int active;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles;
+	
+	// @OneToMany(fetch = FetchType.EAGER, mappedBy = "anime", cascade =
+	// CascadeType.ALL)
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "users", cascade = CascadeType.ALL)
+	private List<Role> roles = new ArrayList<>();
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
 
 	public Users() {
 		// Empy constructor
 	}
-	
-	public Users(int id, String email, String password, String name, String lastName, int active, Set<Role> roles) {
-		
-		this.id = id;
-		this.email = email;
-		this.password = password;
-		this.name = name;
-		this.lastName = lastName;
-		this.active = active;
-		this.roles = roles;
-	}
-	
-	/*public Users(Users users) {
-		this.active = users.getActive();
-		this.email = users.getEmail();
-		this.roles = users.getRoles();
-		this.name = users.getName();
-		this.lastName = users.getLastName();
-		this.id = users.getId();
-		this.password = users.getPassword();
-	}*/
 
 	public int getId() {
 		return id;
 	}
-
-	
 
 	public void setId(int id) {
 		this.id = id;
@@ -100,11 +95,4 @@ public class Users {
 		this.active = active;
 	}
 
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
 }

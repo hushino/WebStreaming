@@ -1,8 +1,8 @@
 package dao;
 
 import java.io.Serializable;
-import java.time.LocalDateTime; 
-import java.util.Date; 
+import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,7 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn; 
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -24,9 +24,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
-@Cache(region = "episodioCache",usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cache(region = "episodioCache", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Episodio implements Serializable {
- 
+
 	private static final long serialVersionUID = 2L;
 
 	@Id
@@ -45,30 +45,24 @@ public class Episodio implements Serializable {
 
 	@Column(length = 300)
 	private String server;
-	
+
 	@Column
 	private Long parentId;
 
 	@Column
 	private LocalDateTime timestap;
-	
-	/*@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "id_anime", joinColumns = {@JoinColumn(name ="fk_episodio")},
-				inverseJoinColumns = {@JoinColumn(name = "fk_anime")})
-	private List<Anime> animes = new ArrayList<Anime>();*/
-	
-	
+
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "IdAnime")
-	private Anime anime;  
-	
+	private Anime anime;
+
 	public Episodio() {
 
 	}
- 
+
 	public Episodio(String titleCap, String imageCap, int chapter, String server, Long parentId, LocalDateTime timestap,
 			Anime anime) {
-		 
+
 		this.titleCap = titleCap;
 		this.imageCap = imageCap;
 		this.chapter = chapter;
@@ -85,7 +79,7 @@ public class Episodio implements Serializable {
 	public void setParentId(Long parentId) {
 		this.parentId = parentId;
 	}
-	
+
 	public Anime getAnime() {
 		return anime;
 	}
@@ -141,7 +135,7 @@ public class Episodio implements Serializable {
 	public void setTimestap(LocalDateTime timestap) {
 		this.timestap = timestap;
 	}
-	
+
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "create_date")

@@ -14,6 +14,10 @@ public class Role {
 	@Column(name = "role")
 	private String roles;
 
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id")
+	private Users users;
+	
 	public Role() {
 		// Empy constructor
 	}
@@ -26,11 +30,21 @@ public class Role {
 		this.roleId = roleId;
 	}
 
-	public String getRole() {
+	public String getRoles() {
 		return roles;
 	}
 
-	public void setRole(String role) {
-		this.roles = role;
+	public void setRoles(String roles) {
+		this.roles = roles;
 	}
+
+	public Users getUsers() {
+		return users;
+	}
+
+	public void setUsers(Users users) {
+		this.users = users;
+	}
+
+ 
 }
