@@ -24,13 +24,13 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.annotations.UpdateTimestamp;
-
+ 
 @Entity
 @Table()
 @Cacheable(true)
 public class Anime implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 14L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
