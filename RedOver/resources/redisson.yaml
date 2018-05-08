@@ -8,13 +8,13 @@ singleServerConfig:
   reconnectionTimeout: 3000
   failedAttempts: 1
   password: null
-  subscriptionsPerConnection: 5
+  subscriptionsPerConnection: 2
   clientName: null
   address: "redis://127.0.0.1:6379"
   subscriptionConnectionMinimumIdleSize: 1
-  subscriptionConnectionPoolSize: 25
-  connectionMinimumIdleSize: 5
-  connectionPoolSize: 100
+  subscriptionConnectionPoolSize: 2
+  connectionMinimumIdleSize: 2
+  connectionPoolSize: 4
   database: 0
   dnsMonitoring: false
   dnsMonitoringInterval: 5000
