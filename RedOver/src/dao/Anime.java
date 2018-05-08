@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Cacheable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +29,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
-@Cache(region = "animeCache", usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cacheable(true)
+//@Cache(region = "animeCache", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Anime implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+import javax.persistence.Cacheable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,14 +18,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table()
-@Cache(region = "episodioCache", usage = CacheConcurrencyStrategy.READ_WRITE)
+@Cacheable(true)
+//@Cache(region = "episodioCache", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Episodio implements Serializable {
 
 	private static final long serialVersionUID = 2L;
