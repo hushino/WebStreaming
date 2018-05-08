@@ -28,7 +28,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table()
 @Cacheable(true)
-//@Cache(region = "animeCache", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Anime implements Serializable {
 
 	private static final long serialVersionUID = 1L;

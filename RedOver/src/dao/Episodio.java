@@ -24,7 +24,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table()
 @Cacheable(true)
-//@Cache(region = "episodioCache", usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Episodio implements Serializable {
 
 	private static final long serialVersionUID = 2L;
