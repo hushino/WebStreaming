@@ -18,7 +18,7 @@ public class UtilsCaps {
 		ArrayList<Episodio> arreglo = new ArrayList<>();
 		for (Object oneObject : session.createQuery("FROM Episodio b ORDER BY b.updateDate DESC")
 				.setMaxResults(10)
-				//.setHint("org.hibernate.cacheable", true)
+				.setHint("org.hibernate.cacheable", true)
 				.getResultList())
 		{
 			arreglo.add((Episodio) oneObject);

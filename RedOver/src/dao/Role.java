@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
+@Cacheable(true)
 public class Role {
 
 	@Id

@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user")
+@Cacheable(true)
 public class Users {
 
 	@Id
