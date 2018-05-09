@@ -12,7 +12,11 @@ public class CheckUser {
 	public boolean check(String uname) {
 		session = HibernateUtil.getSessionFactory().openSession(); 
 		try { 
-			Object query =  session.createQuery("from Users where name = :username").setParameter("username", uname).uniqueResult();
+			Object query = session.createQuery("from Users where name = :username")
+					.setParameter("username", uname)
+					.setHint("org.hibernate.cacheable", true)
+					.setCacheRegion("common")
+					.uniqueResult();
 			if ( query != null ) {
 				session.close();
 				return true;
