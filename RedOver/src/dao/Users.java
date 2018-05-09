@@ -48,6 +48,13 @@ public class Users {
 		// Empy constructor
 	}
 
+	public Users(String name,String email, String password ) {
+		
+		this.email = email;
+		this.password = password;
+		this.name = name;
+	}
+
 	public int getId() {
 		return id;
 	}

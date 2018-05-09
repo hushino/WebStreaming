@@ -26,6 +26,7 @@ public class UtilsTags {
 		session.close();
 		return arreglo;
 	}
+
 	public Tags findbyId(Long id) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.getTransaction();

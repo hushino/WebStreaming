@@ -36,6 +36,7 @@ public class UtilsAnime {
 		ArrayList<Anime> arreglo = new ArrayList<>();
 		for (Object oneObject : session.createQuery("FROM Anime a ORDER BY a.updateDate DESC")
 				.setHint("org.hibernate.cacheable", true)
+				.setCacheRegion("common")
 				.setMaxResults(10)
 				.getResultList()
 			)

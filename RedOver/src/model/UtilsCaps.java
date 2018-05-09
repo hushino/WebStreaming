@@ -18,6 +18,7 @@ public class UtilsCaps {
 		ArrayList<Episodio> arreglo = new ArrayList<>();
 		for (Object oneObject : session.createQuery("FROM Episodio b ORDER BY b.updateDate DESC")
 				.setHint("org.hibernate.cacheable", true)
+				.setCacheRegion("common")
 				.setMaxResults(10)
 				.getResultList())
 		{
