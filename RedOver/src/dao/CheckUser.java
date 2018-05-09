@@ -5,7 +5,7 @@ import org.hibernate.Transaction;
 
 import hibernateUtil.HibernateUtil;
 
-public class CheckUser<R> {
+public class CheckUser {
 	Session session = null;
 	Transaction transaction = null;
 	

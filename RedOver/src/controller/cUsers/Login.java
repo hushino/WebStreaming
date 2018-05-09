@@ -21,7 +21,7 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		//String password = request.getParameter("pass");
 		
-		CheckUser<Object>  user = new CheckUser<>();
+		CheckUser user = new CheckUser();
 		
 		if (user.check(username)) {
 			HttpSession session = request.getSession();
