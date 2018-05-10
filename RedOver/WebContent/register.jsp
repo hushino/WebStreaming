@@ -9,7 +9,7 @@
 				action="<%=request.getContextPath()%>/Register" method="post">
 
 				<label for="nombre">Email</label> <input type="text"
-					class="form-control" id="Email" placeholder="Email" name="Email" />
+					class="form-control" id="email" placeholder="Email" name="email" />
 
 				<label for="nombre">Nombre</label> <input type="text"
 					class="form-control" id="nombre" placeholder="Nombre" name="nombre" />

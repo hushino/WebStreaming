@@ -15,23 +15,35 @@ import dao.CheckUser;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected  void processRequest(HttpServletRequest request, HttpServletResponse response)
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String username = request.getParameter("username");
-		//String password = request.getParameter("pass");
-		
+		String admin = "admin";
+		String normal = "user";
+
+		// String password = request.getParameter("pass");
+
 		CheckUser user = new CheckUser();
-		
-		if (user.check(username)) {
-			HttpSession session = request.getSession();
-			session.setAttribute("username", username);
+
+		if (user.check(username, normal)) {
+			HttpSession httpSession = request.getSession();
+			httpSession.setAttribute("username", username);
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
 			response.setHeader("Pragma", "no-cache"); // HTTP 1.0
 			response.setHeader("Expires", "0"); // Proxies
 			request.getRequestDispatcher("").forward(request, response);
+		} else if (user.check(username, admin)) {
+			HttpSession httpSession = request.getSession();
+			httpSession.setAttribute("username", username);
+			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+			response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+			response.setHeader("Expires", "0"); // Proxies
+
+			request.getRequestDispatcher("editar.jsp").forward(request, response);
+
 		} else {
-			request.getRequestDispatcher("Login.jsp").forward(request, response);
+			request.getRequestDispatcher("").forward(request, response);
 		}
 	}
 

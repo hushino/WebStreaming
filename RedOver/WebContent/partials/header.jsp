@@ -16,7 +16,7 @@
 			<nav>
 				<%-- <a href="<%=request.getContextPath()%>/Anime">Series</a> --%>
 				
-				<a href="<%=request.getContextPath()%>/Login">Login</a>
+				<a href="<%=request.getContextPath()%>/Login.jsp">Login</a>
 				<a href="<%=request.getContextPath()%>/Tags">Generos</a>
 				<a href="<%=request.getContextPath()%>/Anime">Lista de animes</a>
 				<a href="Add.jsp">Crear Nuevo Anime</a>

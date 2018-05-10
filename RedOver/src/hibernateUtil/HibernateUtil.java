@@ -12,7 +12,6 @@ import org.hibernate.cfg.Environment;
 
 import dao.Anime;
 import dao.Episodio;
-import dao.Role;
 import dao.Tags;
 import dao.Users;
 
@@ -70,7 +69,6 @@ public class HibernateUtil  {
 				MetadataSources sources = new MetadataSources(registry)
 						.addAnnotatedClass(Anime.class)
 						.addAnnotatedClass(Episodio.class)
-						.addAnnotatedClass(Role.class)
 						.addAnnotatedClass(Users.class)
 						.addAnnotatedClass(Tags.class);
 				Metadata metadata = sources.getMetadataBuilder().build();

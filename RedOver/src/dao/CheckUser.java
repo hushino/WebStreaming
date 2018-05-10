@@ -1,23 +1,22 @@
 package dao;
 
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import hibernateUtil.HibernateUtil;
 
 public class CheckUser {
 	Session session = null;
-	Transaction transaction = null;
 	
-	public boolean check(String uname) {
+	public boolean check(String uname, String role) {
 		session = HibernateUtil.getSessionFactory().openSession(); 
 		try { 
-			Object query = session.createQuery("from Users where name = :username")
+			Object query = session.createQuery("from Users where name = :username and role = :role")
 					.setParameter("username", uname)
+					.setParameter("role", role)
 					.setHint("org.hibernate.cacheable", true)
 					.setCacheRegion("common")
 					.uniqueResult();
-			if ( query != null ) {
+			if ( query != null) {
 				session.close();
 				return true;
 			}
@@ -29,3 +28,4 @@ public class CheckUser {
 		return false;
 	}
 }
+ 

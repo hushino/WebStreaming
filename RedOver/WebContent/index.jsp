@@ -14,14 +14,15 @@
 					<c:param name="titleCap" value="${capitulos.getTitleCap()}"></c:param>
 				</c:url>  
 				<a href="<%=request.getContextPath()%>/${titleCap}">link</a> --%>
-				<%
-				
+				<!-- Eliminar -->
+				<%-- <%
 				if(session.getAttribute("username")==null){
 					response.sendRedirect("Login.jsp");
 				}
-				%>
-				<form action="<%=request.getContextPath()%>/Logout"> <input type="submit" value="Logout"></form>
-				Welcome <c:out value="${username }"></c:out>
+				%> --%>
+				<%-- <form action="<%=request.getContextPath()%>/Logout"> <input type="submit" value="Logout"></form> --%>
+				<%-- Welcome <c:out value="${username }"></c:out> --%>
+				
 					<a href="<%=request.getContextPath()%>/Ver?id=<c:out value="${capitulos.getId()}"/>">
 					<img class="episodeimage"
 						src=<c:out value="${capitulos.getImageCap()}"></c:out>
