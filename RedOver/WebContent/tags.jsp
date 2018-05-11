@@ -6,17 +6,22 @@
 	<!-- mostrar los animes que pertenecen al tag id -->
 	<div class="contenedor">
 		<div class="elemento">
-			<h4>
-				<c:out value="${tags.getTagName()}"></c:out>
-			</h4>
-			<%-- <c:out value="${tags.getAnimes() }"></c:out> --%>
-			
-			  <c:forEach items="${tags.getAnimes()}" var="tag">
-			
-				<h4>
-					<c:out value="${tag.getTitle() }"></c:out>
-				</h4>
-			</c:forEach>   
+
+			<div class="sada1">
+				<c:forEach items="${tags.getAnimes()}" var="tag">
+					<a
+						href="<%=request.getContextPath()%>/Show?id=<c:out value="${tag.getId()}" />"><img
+						class="image" id="image-home"
+						src=<c:out value="${tag.getFrontimage()}"></c:out>
+						alt="Card image cap"></a>
+					<h4>
+						<c:out value="${tag.getTitle() }"></c:out>
+					</h4>
+					<h4>
+						<c:out value="${tags.getTagName()}"></c:out>
+					</h4>
+			</div>
+			</c:forEach>
 
 		</div>
 	</div>

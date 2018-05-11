@@ -1,8 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -13,7 +10,7 @@ public class UtilsTags {
 	Session session = null;
 	Transaction transaction = null;
 
-	public List<Tags> findTagWithAnime() {
+	/*public List<Tags> findTagWithAnime() {
 		session = HibernateUtil.getSessionFactory().openSession();
 		ArrayList<Tags> arreglo = new ArrayList<>();
 		for (Object object : session.createQuery("from Tags")
@@ -25,7 +22,7 @@ public class UtilsTags {
 		}
 		session.close();
 		return arreglo;
-	}
+	}*/
 
 	public Tags findbyId(Long id) {
 		session = HibernateUtil.getSessionFactory().openSession();
