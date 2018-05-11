@@ -33,10 +33,7 @@ public class Home extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		UtilsAnime op = new UtilsAnime();
 		List<Anime> datos = op.getAnime();
-		/*UtilsTags op2 = new UtilsTags();
-		List<Tags> tag = op2.getTags();*/
 		request.setAttribute("datos", datos);
-		/*request.setAttribute("tag", tag);*/
 		request.getRequestDispatcher("Anime.jsp").forward(request, response);
 	}
 

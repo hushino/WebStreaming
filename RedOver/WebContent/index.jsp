@@ -30,6 +30,7 @@
 						<h4><c:out value="${capitulos.getTitleCap()}"></c:out></h4>
 						</div>
 				</c:forEach>
+
 		</div>
 	</div>
 </body>

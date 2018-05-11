@@ -30,7 +30,7 @@ public class UtilsAnime {
 			}
 		}
 	}
-
+	
 	public List<Anime> getAnime() {
 		session = HibernateUtil.getSessionFactory().openSession(); 
 		ArrayList<Anime> arreglo = new ArrayList<>();
