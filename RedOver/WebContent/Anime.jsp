@@ -10,6 +10,7 @@
 <h4><c:out value="${tags.getTagName()}"></c:out></h4>
 </c:forEach>
  --%>
+<div>  </div>
 <c:forEach items="${datos}" var="dato" >
 <div class="sada1">
 		<a href="<%=request.getContextPath()%>/Show?id=<c:out value="${dato.getId()}" />"><img class="image" id="image-home"

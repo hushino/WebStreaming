@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.Tags;
 import model.UtilsTags;
 
-@WebServlet("/Tagss")
+@WebServlet("/Tags")
 public class TagsHome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

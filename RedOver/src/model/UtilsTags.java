@@ -13,7 +13,7 @@ public class UtilsTags {
 	Session session = null;
 	Transaction transaction = null;
 
-	public List<Tags> getTags() {
+	public List<Tags> findTagWithAnime() {
 		session = HibernateUtil.getSessionFactory().openSession();
 		ArrayList<Tags> arreglo = new ArrayList<>();
 		for (Object object : session.createQuery("from Tags")

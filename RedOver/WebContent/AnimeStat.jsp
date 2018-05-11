@@ -18,7 +18,9 @@
 			<c:forEach items="${datos.getTags()}" var="tag">
 				<tr>
 
-					<td><c:out value="${ tag.getTagName() }"></c:out></td>
+					 
+					<a href="<%=request.getContextPath()%>/Tags?id=<c:out value="${tag.getId()}"/>"><c:out value="${ tag.getTagName() }"></c:out></a>
+					 
 
 				</tr>
 			</c:forEach>
