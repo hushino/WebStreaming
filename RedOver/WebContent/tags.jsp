@@ -3,23 +3,21 @@
 <title>Tags</title>
 </head>
 <body>
+	<!-- mostrar los animes que pertenecen al tag id -->
 	<div class="contenedor">
 		<div class="elemento">
-		  	<h4>
+			<h4>
 				<c:out value="${tags.getTagName()}"></c:out>
 			</h4>
+			<%-- <c:out value="${tags.getAnimes() }"></c:out> --%>
+			
+			  <c:forEach items="${tags.getAnimes()}" var="tag">
+			
+				<h4>
+					<c:out value="${tag.getTitle() }"></c:out>
+				</h4>
+			</c:forEach>   
 
-			<%--   <c:forEach items="${tags}" var="tag">
-				<h4>
-				<a href="<%=request.getContextPath()%>/Show?id=<c:out value="${tag.getIdParent() }" />">VER</a>
-					<c:out value="${tag.getTagName() }"></c:out>
-				</h4>
-				<br></br>
-				<h4>
-					<c:out value="${tag.getIdParent() }"></c:out>
-				</h4>
-			</c:forEach>  --%>
-			 
 		</div>
 	</div>
 </body>

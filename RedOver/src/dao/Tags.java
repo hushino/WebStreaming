@@ -38,9 +38,6 @@ public class Tags implements Serializable {
 	@Column(name = "tagName")
 	private String tagName;
 
-	@Column
-	private Long idParent;
-
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "tag_anime", joinColumns = { @JoinColumn(name = "tag_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "anime_id") })
@@ -51,11 +48,10 @@ public class Tags implements Serializable {
 		// Empy constructor
 	}
 
-	public Tags(Long id, String tagName, Long idParent, List<Anime> animes, Date createDate, Date updateDate) {
+	public Tags(Long id, String tagName, List<Anime> animes, Date createDate, Date updateDate) {
 
 		this.id = id;
 		this.tagName = tagName;
-		this.idParent = idParent;
 		this.animes = animes;
 		this.createDate = createDate;
 		this.updateDate = updateDate;
@@ -71,14 +67,6 @@ public class Tags implements Serializable {
 
 	public Long getId() {
 		return id;
-	}
-
-	public Long getIdParent() {
-		return idParent;
-	}
-
-	public void setIdParent(Long idParent) {
-		this.idParent = idParent;
 	}
 
 	public void setId(Long id) {
