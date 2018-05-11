@@ -7,8 +7,9 @@
 	<div class="contenedor">
 		<div class="elemento">
 
-			<div class="sada1">
+		
 				<c:forEach items="${tags.getAnimes()}" var="tag">
+					<div class="sada1">
 					<a
 						href="<%=request.getContextPath()%>/Show?id=<c:out value="${tag.getId()}" />"><img
 						class="image" id="image-home"
