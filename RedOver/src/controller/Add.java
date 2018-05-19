@@ -28,6 +28,8 @@ public class Add extends HttpServlet {
 		/*String[] tec = request.getParameterValues("tags");
 		String tecs = String.join(",", tec);*/
 		
+		
+		
 		op.addAnime(new Anime(
 				
 								request.getParameter("title"), 
