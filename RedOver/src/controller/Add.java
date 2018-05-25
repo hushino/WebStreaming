@@ -42,7 +42,7 @@ public class Add extends HttpServlet {
 		//response.sendRedirect("");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		processRequest(request, response);
